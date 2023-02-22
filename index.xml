@@ -13,16 +13,16 @@
       <pubDate>Wed, 22 Feb 2023 21:53:22 +0800</pubDate>
       
       <guid>https://lysandert.github.io/posts/blog/blog_workflow/</guid>
-      <description>what‘s this？</description>
+      <description>time flies......</description>
     </item>
     
     <item>
-      <title>Git command</title>
+      <title>Git Command</title>
       <link>https://lysandert.github.io/posts/blog/git_command/</link>
       <pubDate>Wed, 22 Feb 2023 19:42:43 +0800</pubDate>
       
       <guid>https://lysandert.github.io/posts/blog/git_command/</guid>
-      <description>basic initialize local repository git init make untracked file tracked git add [file] git add . # add all commit changes git commit -m &amp;quot;message&amp;quot; view current information about git git status remote repository set a new remote repo git remote add origin [https or ssh] # origin is the default name of remote repo view current remote repo git remote -v change url git remote set-url [https or ssh] 拉取远程仓库 git pull git pull origin master &amp;gt;&amp;gt;&amp;gt; Already up to date. upload git push -u origin master # first time git push origin master git push</description>
+      <description>in common use</description>
     </item>
     
     <item>
