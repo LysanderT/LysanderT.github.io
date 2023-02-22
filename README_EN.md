@@ -1,18 +1,18 @@
-Language：English | [中文](https://github.com/xyming108/sulv-hugo-papermod)
+Language：English | [中文](https://github.com/xyming108/Lysander-hugo-papermod)
 
 ## 1. Git clone pull code
 
-① Use `git clone` to pull the code to the desktop. At this time, the sulv Hugo papermod directory will be generated on the desktop
+① Use `git clone` to pull the code to the desktop. At this time, the Lysander Hugo papermod directory will be generated on the desktop
 
-② Enter the sulv Hugo papermod directory and enter `git submodule update --init` to pull the submodule under themes / Hugo papermod / and put the official theme inside
+② Enter the Lysander Hugo papermod directory and enter `git submodule update --init` to pull the submodule under themes / Hugo papermod / and put the official theme inside
 
 ## 2. Startup interface
 
-③ Return the directory to sulv Hugo papermod, enter `hugo server -d` in the terminal, and enter: localhost:1313 in the browser to see the ready-made blog template.
+③ Return the directory to Lysander Hugo papermod, enter `hugo server -d` in the terminal, and enter: localhost:1313 in the browser to see the ready-made blog template.
 
 ## 3. Modify information
 
-There are many personal information in the template that need to be configured by yourself. Please be patient to modify it. You can refer to the blogger's website building tutorial:[ https://www.sulvblog.cn/posts/blog/ ]( https://www.sulvblog.cn/posts/blog/ )
+There are many personal information in the template that need to be configured by yourself. Please be patient to modify it. You can refer to the blogger's website building tutorial:[ https://lysandert.github.io/posts/blog/ ]( https://lysandert.github.io/posts/blog/ )
 
 ## 4. Hugo blog exchange group
 
@@ -38,8 +38,8 @@ There are many personal information in the template that need to be configured b
 gallery:
 
 {{< gallery >}}
-{{< figure src="https://www.sulvblog.cn/posts/read/structural_thinking/0.png" >}}
-{{< figure src="https://www.sulvblog.cn/posts/read/structural_thinking/0.png" >}}
+{{< figure src="https://lysandert.github.io/posts/read/structural_thinking/0.png" >}}
+{{< figure src="https://lysandert.github.io/posts/read/structural_thinking/0.png" >}}
 {{< /gallery >}}
 ```
 
