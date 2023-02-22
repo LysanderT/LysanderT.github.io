@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>🧱 建站 on Lysander&#39;s Blog</title>
+    <title>👨🏻‍💻 技术 on Lysander&#39;s Blog</title>
     <link>https://lysandert.github.io/posts/blog/</link>
-    <description>Recent content in 🧱 建站 on Lysander&#39;s Blog</description>
+    <description>Recent content in 👨🏻‍💻 技术 on Lysander&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 05 May 2022 00:18:23 +0800</lastBuildDate><atom:link href="https://lysandert.github.io/posts/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 22 Feb 2023 19:42:43 +0800</lastBuildDate><atom:link href="https://lysandert.github.io/posts/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Git</title>
+      <link>https://lysandert.github.io/posts/blog/git/</link>
+      <pubDate>Wed, 22 Feb 2023 19:42:43 +0800</pubDate>
+      
+      <guid>https://lysandert.github.io/posts/blog/git/</guid>
+      <description>Git basic initialize local repository git init make untracked file tracked git add [file] git add . # add all commit changes git commit -m &amp;quot;message&amp;quot; view current information about git git status remote repository set a new remote repo git remote add origin [https or ssh] # origin is the default name of remote repo view current remote repo git remote -v change url git remote set-url [https or ssh] 拉取远程仓库 git pull git pull origin master &amp;gt;&amp;gt;&amp;gt; Already up to date. upload git push -u origin master # first time git push origin master git push</description>
+    </item>
+    
     <item>
       <title>Blog</title>
       <link>https://lysandert.github.io/posts/blog/blog/</link>

@@ -6,13 +6,22 @@
     <description>Recent content on Lysander&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 21 Feb 2023 12:20:21 +0800</lastBuildDate><atom:link href="https://lysandert.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 22 Feb 2023 19:42:43 +0800</lastBuildDate><atom:link href="https://lysandert.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Tech1</title>
-      <link>https://lysandert.github.io/posts/tech/tech1/</link>
+      <title>Git</title>
+      <link>https://lysandert.github.io/posts/blog/git/</link>
+      <pubDate>Wed, 22 Feb 2023 19:42:43 +0800</pubDate>
+      
+      <guid>https://lysandert.github.io/posts/blog/git/</guid>
+      <description>Git basic initialize local repository git init make untracked file tracked git add [file] git add . # add all commit changes git commit -m &amp;quot;message&amp;quot; view current information about git git status remote repository set a new remote repo git remote add origin [https or ssh] # origin is the default name of remote repo view current remote repo git remote -v change url git remote set-url [https or ssh] 拉取远程仓库 git pull git pull origin master &amp;gt;&amp;gt;&amp;gt; Already up to date. upload git push -u origin master # first time git push origin master git push</description>
+    </item>
+    
+    <item>
+      <title>Research1</title>
+      <link>https://lysandert.github.io/posts/research/research1/</link>
       <pubDate>Tue, 21 Feb 2023 12:20:21 +0800</pubDate>
       
-      <guid>https://lysandert.github.io/posts/tech/tech1/</guid>
+      <guid>https://lysandert.github.io/posts/research/research1/</guid>
       <description></description>
     </item>
     
@@ -44,11 +53,11 @@
     </item>
     
     <item>
-      <title>Tech</title>
-      <link>https://lysandert.github.io/posts/tech/tech/</link>
+      <title>Research1</title>
+      <link>https://lysandert.github.io/posts/research/research/</link>
       <pubDate>Thu, 05 May 2022 00:17:58 +0800</pubDate>
       
-      <guid>https://lysandert.github.io/posts/tech/tech/</guid>
+      <guid>https://lysandert.github.io/posts/research/research/</guid>
       <description>科技代码</description>
     </item>
     
@@ -58,7 +67,7 @@
       <pubDate>Sat, 06 Nov 2021 15:15:53 +0800</pubDate>
       
       <guid>https://lysandert.github.io/links/</guid>
-      <description>Lysander&amp;#39;s Blog 一个记录技术、阅读、生活的博客 👉友链格式 名称： Lysander&amp;rsquo;s Blog 网址： https://lysandert.github.io 图标： https://lysandert.github.io/img/cai.gif 描述： 一个记录技术、阅读、生活的博客 👉友链申请要求 秉承互换友链原则、文章定期更新、不能有太多广告、个人描述字数控制在15字内 👉Hugo博客交流群 787018782</description>
+      <description>Lysander&amp;#39;s Blog 一个记录技术、阅读、生活的博客 👉友链格式 名称： Lysander&amp;rsquo;s Blog 网址： https://lysandert.github.io 图标： https://lysandert.github.io/img/cai.gif 描述： 一个记录技术、阅读、生活的博客 👉友链申请要求 秉承互换友链原则、文章定期更新、不能有太多广告、个人描述字数控制在15字内 👉Hugo博客交流群 ????????</description>
     </item>
     
     <item>
