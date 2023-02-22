@@ -6,7 +6,16 @@
     <description>Recent content in 👨🏻‍💻 技术 on Lysander&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 22 Feb 2023 21:53:22 +0800</lastBuildDate><atom:link href="https://lysandert.github.io/posts/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 23 Feb 2023 00:01:25 +0800</lastBuildDate><atom:link href="https://lysandert.github.io/posts/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【个人网站搭建】hugo &#43; github pages</title>
+      <link>https://lysandert.github.io/posts/blog/blog_setup/</link>
+      <pubDate>Thu, 23 Feb 2023 00:01:25 +0800</pubDate>
+      
+      <guid>https://lysandert.github.io/posts/blog/blog_setup/</guid>
+      <description>免费搭建个人学术主页/博客，无需购买服务器、域名，无需掌握前端知识</description>
+    </item>
+    
     <item>
       <title>Blog Workflow</title>
       <link>https://lysandert.github.io/posts/blog/blog_workflow/</link>
