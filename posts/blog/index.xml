@@ -6,7 +6,25 @@
     <description>Recent content in 👨🏻‍💻 技术 on Lysander&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 23 Feb 2023 13:44:00 +0800</lastBuildDate><atom:link href="https://lysandert.github.io/posts/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 23 Feb 2023 20:04:56 +0800</lastBuildDate><atom:link href="https://lysandert.github.io/posts/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>hugo博客 文内插入图片</title>
+      <link>https://lysandert.github.io/posts/blog/blog_insert_pic/</link>
+      <pubDate>Thu, 23 Feb 2023 20:04:56 +0800</pubDate>
+      
+      <guid>https://lysandert.github.io/posts/blog/blog_insert_pic/</guid>
+      <description>静态编译，不用图床</description>
+    </item>
+    
+    <item>
+      <title>VS Code ChatGPT插件</title>
+      <link>https://lysandert.github.io/posts/blog/chatgpt_plugin_for_vscode/</link>
+      <pubDate>Thu, 23 Feb 2023 19:07:35 +0800</pubDate>
+      
+      <guid>https://lysandert.github.io/posts/blog/chatgpt_plugin_for_vscode/</guid>
+      <description>让chatgpt协助你开发！</description>
+    </item>
+    
     <item>
       <title>C&#43;&#43; STL heap用法</title>
       <link>https://lysandert.github.io/posts/blog/c&#43;&#43;_heap%E7%94%A8%E6%B3%95/</link>
@@ -41,6 +59,15 @@
       
       <guid>https://lysandert.github.io/posts/blog/git_command/</guid>
       <description>in common use</description>
+    </item>
+    
+    <item>
+      <title>国内获取账号、访问chatGPT</title>
+      <link>https://lysandert.github.io/posts/blog/chatgpt_setup/</link>
+      <pubDate>Tue, 21 Feb 2023 19:06:42 +0800</pubDate>
+      
+      <guid>https://lysandert.github.io/posts/blog/chatgpt_setup/</guid>
+      <description>一.购买代理服务 即梯子，vpn，whatever。可以帮助你将ip地址包装成其他国家/地区，从而打开比如维基百科、chatgpt等学习网站。 已有代理服务的可以直接看下一节内容。如果觉得自己的梯子速度比较快的话也可以选择推荐给我。 没有的可以尝试自行搜索。考虑到百度现在ban了包括但</description>
     </item>
     
   </channel>
