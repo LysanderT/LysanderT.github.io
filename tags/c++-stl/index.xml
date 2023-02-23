@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>C&#43;&#43; STL on Lysander&#39;s Blog</title>
+    <link>https://lysandert.github.io/tags/c&#43;&#43;-stl/</link>
+    <description>Recent content in C&#43;&#43; STL on Lysander&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 23 Feb 2023 13:44:00 +0800</lastBuildDate><atom:link href="https://lysandert.github.io/tags/c++-stl/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>C&#43;&#43; STL heap用法</title>
+      <link>https://lysandert.github.io/posts/blog/c&#43;&#43;_heap%E7%94%A8%E6%B3%95/</link>
+      <pubDate>Thu, 23 Feb 2023 13:44:00 +0800</pubDate>
+      
+      <guid>https://lysandert.github.io/posts/blog/c&#43;&#43;_heap%E7%94%A8%E6%B3%95/</guid>
+      <description>C++的堆操作一共两套体系： make_heap和priority_queue 前者是直接把原容器变成堆，类似于python中的heapq模块， 后者是新建一个priority_queue类容器。 默认都是大顶堆,默认的cmp都是less&amp;lt;&amp;gt;. 想要小顶堆可以把val都加负号，</description>
+    </item>
+    
+  </channel>
+</rss>

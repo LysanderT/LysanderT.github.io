@@ -5,11 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>Git Command | Lysander&#39;s Blog</title>
-<meta name="keywords" content="git, git命令">
-<meta name="description" content="in common use">
+<title>C&#43;&#43; STL heap用法 | Lysander&#39;s Blog</title>
+<meta name="keywords" content="heap, C&#43;&#43;, STL">
+<meta name="description" content="C&#43;&#43;的堆操作一共两套体系： make_heap和priority_queue 前者是直接把原容器变成堆，类似于python中的heapq模块， 后者是新建一个priority_queue类容器。 默认都是大顶堆,默认的cmp都是less&lt;&gt;. 想要小顶堆可以把val都加负号，">
 <meta name="author" content="Lysander">
-<link rel="canonical" href="https://lysandert.github.io/posts/blog/git_command/">
+<link rel="canonical" href="https://lysandert.github.io/posts/blog/c&#43;&#43;_heap%E7%94%A8%E6%B3%95/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.0ce26d32f6830dc0977ffcea19c70c41672c351d55c2e6b0a2a6eb39ab92cb19.css" integrity="sha256-DOJtMvaDDcCXf/zqGccMQWcsNR1VwuawoqbrOauSyxk=" rel="preload stylesheet" as="style">
 <script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
         onload="hljs.initHighlightingOnLoad();"></script>
@@ -74,16 +74,16 @@ var _hmt = _hmt || [];
   s.parentNode.insertBefore(hm, s);
 })();
 </script>
-<meta property="og:title" content="Git Command" />
-<meta property="og:description" content="in common use" />
+<meta property="og:title" content="C&#43;&#43; STL heap用法" />
+<meta property="og:description" content="C&#43;&#43;的堆操作一共两套体系： make_heap和priority_queue 前者是直接把原容器变成堆，类似于python中的heapq模块， 后者是新建一个priority_queue类容器。 默认都是大顶堆,默认的cmp都是less&lt;&gt;. 想要小顶堆可以把val都加负号，" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://lysandert.github.io/posts/blog/git_command/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2023-02-22T19:42:43+08:00" />
-<meta property="article:modified_time" content="2023-02-22T19:42:43+08:00" />
+<meta property="og:url" content="https://lysandert.github.io/posts/blog/c&#43;&#43;_heap%E7%94%A8%E6%B3%95/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-02-23T13:44:00+08:00" />
+<meta property="article:modified_time" content="2023-02-23T13:44:00+08:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Git Command"/>
-<meta name="twitter:description" content="in common use"/>
+<meta name="twitter:title" content="C&#43;&#43; STL heap用法"/>
+<meta name="twitter:description" content="C&#43;&#43;的堆操作一共两套体系： make_heap和priority_queue 前者是直接把原容器变成堆，类似于python中的heapq模块， 后者是新建一个priority_queue类容器。 默认都是大顶堆,默认的cmp都是less&lt;&gt;. 想要小顶堆可以把val都加负号，"/>
 
 
 <script type="application/ld+json">
@@ -108,8 +108,8 @@ var _hmt = _hmt || [];
     {
       "@type": "ListItem",
       "position":  4 ,
-      "name": "Git Command",
-      "item": "https://lysandert.github.io/posts/blog/git_command/"
+      "name": "C++ STL heap用法",
+      "item": "https://lysandert.github.io/posts/blog/c++_heap%E7%94%A8%E6%B3%95/"
     }
   ]
 }
@@ -118,24 +118,24 @@ var _hmt = _hmt || [];
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "Git Command",
-  "name": "Git Command",
-  "description": "in common use",
+  "headline": "C++ STL heap用法",
+  "name": "C\u002b\u002b STL heap用法",
+  "description": "C++的堆操作一共两套体系： make_heap和priority_queue 前者是直接把原容器变成堆，类似于python中的heapq模块， 后者是新建一个priority_queue类容器。 默认都是大顶堆,默认的cmp都是less\u0026lt;\u0026gt;. 想要小顶堆可以把val都加负号，",
   "keywords": [
-    "git", "git命令"
+    "heap", "C++", "STL"
   ],
-  "articleBody": "basic initialize local repository\ngit init make untracked file tracked\ngit add [file] git add . # add all git add --all git add -A commit changes\ngit commit -m \"message\" view current information about git\ngit status clone from the github\ngit clone ssh/https remote repository set a new remote repo\ngit remote add origin [https or ssh] # origin is the default name of remote repo view current remote repo\ngit remote -v change url\ngit remote set-url [https or ssh] 拉取远程仓库\ngit pull git pull origin master \u003e\u003e\u003e Already up to date. upload\ngit push -u origin master # first time git push origin master git push ",
-  "wordCount" : "115",
+  "articleBody": "C++的堆操作一共两套体系：\nmake_heap和priority_queue\n前者是直接把原容器变成堆，类似于python中的heapq模块，\n后者是新建一个priority_queue类容器。\n默认都是大顶堆,默认的cmp都是less\u003c\u003e.\n想要小顶堆可以把val都加负号，也可以传入greater\u003c\u003e，同时也可以自定义：创建一个struct，或写一个cmp函数传入。\n1. make_heap 头文件： #include 堆操作方法-更底层，支持复杂度O(n)的直接建堆。 数据结构不改变，是直接将原先容器中的元素order变成符合堆定义的order 1.1 默认大顶堆，即cmp位置传入 \"less\u003c\u003e{}\" vector\u003cint\u003e v { 3, 2, 4, 1, 5, 9 }; // 建堆：传入iterator // make_heap(iterator::left, iterator::right, cmp = less\u003c\u003e); make_heap(v.begin(),v.end()); //默认max-heap // after make_heap, v: 9 5 4 1 2 3 // 弹出：先pop_heap再pop_back pop_heap(v.begin(),v.end()); // after pop_heap, v: 5 3 4 1 2 9 // 把堆顶元素放到堆尾去了 // 此时非堆尾元素构成一个堆 int top = v.back; // top = 9 v.pop_back(); // v仍然是一个vector，支持pop_back // after removing the former top element, v: 5 3 4 1 2 // 压入：先push_back再push_pop v.push_back(6); push_heap(v.begin(),v.end()); 1.2 快捷改成小顶堆 1.2.1 先把数据都添加负号再建堆 1.2.2 cmp位置传入 \"greater\u003c\u003e{}\" make_heap(v1.begin(), v1.end(), greater\u003c\u003e{}); //注意pop_heap和push_heap时同样也要传 pop_heap(v1.begin(), v1.end(), greater\u003c\u003e{}); push_heap(v1.begin(), v1.end(), greater\u003c\u003e{}); 1.3 传入其他cmp自定义 2. priority_queue #include 封装的更好。但是不支持直接建堆。 数据结构改为优先队列类型,与vector\u003c\u003e接口不能共用。 2.1 默认是传入less\u003c\u003e，是最大堆 priority_queue\u003cint\u003e res; res.push(x); 2.2 可以传入greater\u003c\u003e 改成最小堆，或将数据添加负号 priority_queue\u003cint, vector\u003cint\u003e, greater\u003c\u003e \u003e res; res.push(x); // 或 priority_queue\u003cint\u003e res; res.push(-x); 2.3 自定义结构 struct S{ int key, val; //一定是重写 \u003c 操作符！！ bool operator\u003c(const \u0026S other){ return val \u003c other.val; // 或其他的判别方式，但反正大的那个意味着更高的优先级 } priority_queue\u003cS\u003e res; res.push({key,val});//此时便会自动用S中重写的\u003c当作cmp函数去排序 } 3. topK问题 想要找到数组中第k或前k大元素，可以用heap来解决（当然也有其他更好的办法例如用快排的partition可以实现O(n)的复杂度，这里不再赘述）\n一. 维护n个元素的堆 直接建max-heap，然后弹出来k个\n复杂度为O(n + klgn)\n二. 维护k个元素的堆 对前k个建min-heap。后面的每个与堆顶比较，把大的留在堆里，这样最后就剩下了前k个最大的元素，第k个就是堆顶那个。\n复杂度为O(k + (n-k)lgk) 或者 O(nlgk)\n(主要是看前k个是直接建堆还是插入建堆)\n",
+  "wordCount" : "1007",
   "inLanguage": "en",
-  "datePublished": "2023-02-22T19:42:43+08:00",
-  "dateModified": "2023-02-22T19:42:43+08:00",
+  "datePublished": "2023-02-23T13:44:00+08:00",
+  "dateModified": "2023-02-23T13:44:00+08:00",
   "author":[{
     "@type": "Person",
     "name": "Lysander"
   }],
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://lysandert.github.io/posts/blog/git_command/"
+    "@id": "https://lysandert.github.io/posts/blog/c++_heap%E7%94%A8%E6%B3%95/"
   },
   "publisher": {
     "@type": "Organization",
@@ -251,11 +251,8 @@ var _hmt = _hmt || [];
         <header class="post-header">
             <div class="breadcrumbs"><a href="https://lysandert.github.io">🏠 主页</a>&nbsp;»&nbsp;<a href="https://lysandert.github.io/posts/">📚文章</a>&nbsp;»&nbsp;<a href="https://lysandert.github.io/posts/blog/">👨🏻‍💻 技术</a></div>
             <h1 class="post-title">
-                Git Command
+                C&#43;&#43; STL heap用法
             </h1>
-            <div class="post-description">
-                in common use
-            </div>
             <div class="post-meta"><style>
     i[id*="post_meta_style"] {
         display: flex;
@@ -273,7 +270,7 @@ var _hmt = _hmt || [];
 <span class="parent-post-meta">
     <span id="post_meta_style_1">
         <span class="fa fa-calendar-check-o"></span>
-        <span>2023-02-22
+        <span>2023-02-23
             &nbsp;&nbsp;
         </span>
     </span>
@@ -286,13 +283,13 @@ var _hmt = _hmt || [];
     
     <span id="post_meta_style_3">
         <span class="fa fa-file-word-o"></span>
-        <span>115字
+        <span>1007字
             &nbsp;&nbsp;
         </span>
     </span>
     <span id="post_meta_style_4">
         <span class="fa fa-clock-o"></span>
-        <span>1分钟
+        <span>3分钟
             &nbsp;&nbsp;
         </span>
     </span>
@@ -306,7 +303,7 @@ var _hmt = _hmt || [];
         <span class="fa fa-tags" style="opacity: 0.8"></span>
         <span>
             <span class="post-tags-meta">
-                <a href="https://lysandert.github.io/tags/git/" style="color: var(--secondary)!important;">git</a>
+                <a href="https://lysandert.github.io/tags/c&#43;&#43;-stl/" style="color: var(--secondary)!important;">C&#43;&#43; STL</a>
             </span>
         </span>
     </span>
@@ -368,10 +365,19 @@ var _hmt = _hmt || [];
 
             <div class="inner"><ul>
                     <li>
-                        <a href="#basic" aria-label="basic">basic</a></li>
+                        <a href="#1-make_heap" aria-label="1. make_heap">1. make_heap</a></li>
                     <li>
-                        <a href="#remote-repository" aria-label="remote repository">remote repository</a>
+                        <a href="#2-priority_queue" aria-label="2. priority_queue">2. priority_queue</a></li>
+                    <li>
+                        <a href="#3-topk%e9%97%ae%e9%a2%98" aria-label="3. topK问题">3. topK问题</a><ul>
+                            
+                    <li>
+                        <a href="#%e4%b8%80-%e7%bb%b4%e6%8a%a4n%e4%b8%aa%e5%85%83%e7%b4%a0%e7%9a%84%e5%a0%86" aria-label="一. 维护n个元素的堆">一. 维护n个元素的堆</a></li>
+                    <li>
+                        <a href="#%e4%ba%8c-%e7%bb%b4%e6%8a%a4k%e4%b8%aa%e5%85%83%e7%b4%a0%e7%9a%84%e5%a0%86" aria-label="二. 维护k个元素的堆">二. 维护k个元素的堆</a>
                     </li>
+                </ul>
+                </li>
                 </ul>
             </div>
         </details>
@@ -437,48 +443,84 @@ var _hmt = _hmt || [];
     }
 </script>
 
-        <div class="post-content"><h2 id="basic">basic<a hidden class="anchor" aria-hidden="true" href="#basic">#</a></h2>
-<p>initialize local repository</p>
-<pre><code>git init
-</code></pre>
-<p>make untracked file tracked</p>
-<pre><code>git add [file]
-git add .  # add all
-git add --all
-git add -A
-</code></pre>
-<p>commit changes</p>
-<pre><code>git commit -m &quot;message&quot;
-</code></pre>
-<p>view current information about git</p>
-<pre><code>git status
-</code></pre>
-<p>clone from the github</p>
-<pre><code>git clone ssh/https
-</code></pre>
-<h2 id="remote-repository">remote repository<a hidden class="anchor" aria-hidden="true" href="#remote-repository">#</a></h2>
-<p>set a new remote repo</p>
-<pre><code>git remote add origin [https or ssh]
-
-# origin is the default name of remote repo
-</code></pre>
-<p>view current remote repo</p>
-<pre><code>git remote -v
-</code></pre>
-<p>change url</p>
-<pre><code>git remote set-url [https or ssh]
-</code></pre>
-<p>拉取远程仓库</p>
-<pre><code>git pull
-git pull origin master
-
-&gt;&gt;&gt; Already up to date.
-</code></pre>
-<p>upload</p>
-<pre><code>git push -u origin master # first time
-git push origin master
-git push
-</code></pre>
+        <div class="post-content"><p>C++的堆操作一共两套体系：</p>
+<p>make_heap和priority_queue</p>
+<p>前者是直接把原容器变成堆，类似于python中的heapq模块，</p>
+<p>后者是新建一个priority_queue类容器。</p>
+<p>默认都是大顶堆,默认的cmp都是less&lt;&gt;.</p>
+<p>想要小顶堆可以把val都加负号，也可以传入greater&lt;&gt;，同时也可以自定义：创建一个struct，或写一个cmp函数传入。</p>
+<h4 id="1-make_heap">1. make_heap<a hidden class="anchor" aria-hidden="true" href="#1-make_heap">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C++" data-lang="C++"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">头文件：</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;algorithm&gt;</span><span style="color:#75715e">
+</span></span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C++" data-lang="C++"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">堆操作方法</span><span style="color:#f92672">-</span><span style="color:#960050;background-color:#1e0010">更底层，支持复杂度</span>O(n)<span style="color:#960050;background-color:#1e0010">的直接建堆。</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">数据结构不改变，是直接将原先容器中的元素</span>order<span style="color:#960050;background-color:#1e0010">变成符合堆定义的</span>order
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1.1</span> <span style="color:#960050;background-color:#1e0010">默认大顶堆，即</span>cmp<span style="color:#960050;background-color:#1e0010">位置传入</span> <span style="color:#e6db74">&#34;less&lt;&gt;{}&#34;</span>
+</span></span><span style="display:flex;"><span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> v { <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">9</span> };
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 建堆：传入iterator
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// make_heap(iterator::left, iterator::right, cmp = less&lt;&gt;);
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>make_heap(v.begin(),v.end()); <span style="color:#75715e">//默认max-heap
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// after make_heap, v: 9 5 4 1 2 3
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 弹出：先pop_heap再pop_back
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>pop_heap(v.begin(),v.end());
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// after pop_heap, v: 5 3 4 1 2 9 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// 把堆顶元素放到堆尾去了
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// 此时非堆尾元素构成一个堆
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> top <span style="color:#f92672">=</span> v.back; <span style="color:#75715e">// top = 9
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>v.pop_back();
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// v仍然是一个vector&lt;int&gt;，支持pop_back
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// after removing the former top element, v: 5 3 4 1 2
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 压入：先push_back再push_pop
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>v.push_back(<span style="color:#ae81ff">6</span>);
+</span></span><span style="display:flex;"><span>push_heap(v.begin(),v.end());
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1.2</span> <span style="color:#960050;background-color:#1e0010">快捷改成小顶堆</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1.2.1</span> <span style="color:#960050;background-color:#1e0010">先把数据都添加负号再建堆</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1.2.2</span> cmp<span style="color:#960050;background-color:#1e0010">位置传入</span> <span style="color:#e6db74">&#34;greater&lt;&gt;{}&#34;</span>
+</span></span><span style="display:flex;"><span>make_heap(v1.begin(), v1.end(), greater<span style="color:#f92672">&lt;&gt;</span>{});
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//注意pop_heap和push_heap时同样也要传
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>pop_heap(v1.begin(), v1.end(), greater<span style="color:#f92672">&lt;&gt;</span>{});
+</span></span><span style="display:flex;"><span>push_heap(v1.begin(), v1.end(), greater<span style="color:#f92672">&lt;&gt;</span>{});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1.3</span> <span style="color:#960050;background-color:#1e0010">传入其他</span>cmp<span style="color:#960050;background-color:#1e0010">自定义</span>
+</span></span></code></pre></div><h4 id="2-priority_queue">2. priority_queue<a hidden class="anchor" aria-hidden="true" href="#2-priority_queue">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;queue&gt;</span><span style="color:#75715e">
+</span></span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C++" data-lang="C++"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">封装的更好。但是不支持直接建堆。</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">数据结构改为优先队列类型</span>,<span style="color:#960050;background-color:#1e0010">与</span>vector<span style="color:#f92672">&lt;&gt;</span><span style="color:#960050;background-color:#1e0010">接口不能共用。</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">2.1</span> <span style="color:#960050;background-color:#1e0010">默认是传入</span>less<span style="color:#f92672">&lt;&gt;</span><span style="color:#960050;background-color:#1e0010">，是最大堆</span>
+</span></span><span style="display:flex;"><span>priority_queue<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> res;
+</span></span><span style="display:flex;"><span>res.push(x);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">2.2</span> <span style="color:#960050;background-color:#1e0010">可以传入</span>greater<span style="color:#f92672">&lt;&gt;</span> <span style="color:#960050;background-color:#1e0010">改成最小堆，或将数据添加负号</span>
+</span></span><span style="display:flex;"><span>priority_queue<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span>, vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span>, greater<span style="color:#f92672">&lt;&gt;</span> <span style="color:#f92672">&gt;</span> res;
+</span></span><span style="display:flex;"><span>res.push(x);
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 或
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>priority_queue<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> res;
+</span></span><span style="display:flex;"><span>res.push(<span style="color:#f92672">-</span>x);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">2.3</span> <span style="color:#960050;background-color:#1e0010">自定义结构</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">S</span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> key, val;
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//一定是重写 &lt; 操作符！！
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">bool</span> <span style="color:#66d9ef">operator</span><span style="color:#f92672">&lt;</span>(<span style="color:#66d9ef">const</span> <span style="color:#f92672">&amp;</span>S other){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> val <span style="color:#f92672">&lt;</span> other.val; 
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 或其他的判别方式，但反正大的那个意味着更高的优先级
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    }
+</span></span><span style="display:flex;"><span>priority_queue<span style="color:#f92672">&lt;</span>S<span style="color:#f92672">&gt;</span> res;
+</span></span><span style="display:flex;"><span>res.push({key,val});<span style="color:#75715e">//此时便会自动用S中重写的&lt;当作cmp函数去排序
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></div><h4 id="3-topk问题">3. topK问题<a hidden class="anchor" aria-hidden="true" href="#3-topk问题">#</a></h4>
+<p>想要找到数组中第k或前k大元素，可以用heap来解决（当然也有其他更好的办法例如用快排的partition可以实现O(n)的复杂度，这里不再赘述）</p>
+<h5 id="一-维护n个元素的堆">一. 维护n个元素的堆<a hidden class="anchor" aria-hidden="true" href="#一-维护n个元素的堆">#</a></h5>
+<p>直接建max-heap，然后弹出来k个</p>
+<p>复杂度为O(n + klgn)</p>
+<h5 id="二-维护k个元素的堆">二. 维护k个元素的堆<a hidden class="anchor" aria-hidden="true" href="#二-维护k个元素的堆">#</a></h5>
+<p>对前k个建min-heap。后面的每个与堆顶比较，把大的留在堆里，这样最后就剩下了前k个最大的元素，第k个就是堆顶那个。</p>
+<p>复杂度为O(k + (n-k)lgk) 或者 O(nlgk)</p>
+<p>(主要是看前k个是直接建堆还是插入建堆)</p>
 
 
         </div>
@@ -513,15 +555,10 @@ git push
         <footer class="post-footer">
             
 <nav class="paginav">
-  <a class="prev" href="https://lysandert.github.io/posts/blog/blog_workflow/">
-    <span class="title">« 上一页</span>
-    <br>
-    <span>Blog Workflow</span>
-  </a>
-  <a class="next" href="https://lysandert.github.io/posts/research/research1/">
+  <a class="next" href="https://lysandert.github.io/posts/blog/blog_setup/">
     <span class="title">下一页 »</span>
     <br>
-    <span>Research1</span>
+    <span>【个人网站搭建】hugo &#43; github pages</span>
   </a>
 </nav>
 

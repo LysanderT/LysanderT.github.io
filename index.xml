@@ -6,7 +6,16 @@
     <description>Recent content on Lysander&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 23 Feb 2023 00:01:25 +0800</lastBuildDate><atom:link href="https://lysandert.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 23 Feb 2023 13:44:00 +0800</lastBuildDate><atom:link href="https://lysandert.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>C&#43;&#43; STL heap用法</title>
+      <link>https://lysandert.github.io/posts/blog/c&#43;&#43;_heap%E7%94%A8%E6%B3%95/</link>
+      <pubDate>Thu, 23 Feb 2023 13:44:00 +0800</pubDate>
+      
+      <guid>https://lysandert.github.io/posts/blog/c&#43;&#43;_heap%E7%94%A8%E6%B3%95/</guid>
+      <description>C++的堆操作一共两套体系： make_heap和priority_queue 前者是直接把原容器变成堆，类似于python中的heapq模块， 后者是新建一个priority_queue类容器。 默认都是大顶堆,默认的cmp都是less&amp;lt;&amp;gt;. 想要小顶堆可以把val都加负号，</description>
+    </item>
+    
     <item>
       <title>【个人网站搭建】hugo &#43; github pages</title>
       <link>https://lysandert.github.io/posts/blog/blog_setup/</link>
@@ -22,7 +31,7 @@
       <pubDate>Wed, 22 Feb 2023 21:53:22 +0800</pubDate>
       
       <guid>https://lysandert.github.io/posts/blog/blog_workflow/</guid>
-      <description>time flies......</description>
+      <description>My blog workflow</description>
     </item>
     
     <item>
