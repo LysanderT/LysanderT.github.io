@@ -71,6 +71,15 @@
     </item>
     
     <item>
+      <title>linux(ubuntu)常见bug解决</title>
+      <link>https://lysandert.github.io/posts/blog/ubuntu_bug/</link>
+      <pubDate>Tue, 21 Feb 2023 16:44:43 +0800</pubDate>
+      
+      <guid>https://lysandert.github.io/posts/blog/ubuntu_bug/</guid>
+      <description>1. apt/apt-get update失败 1.1 尝试换源 命令行里输入 nano /etc/apt/sources.list 在打开的编辑器里将原有的源注释。 打开firefox搜索中科大/阿里/清华源（记得一定要与ubuntu的版本对应），复制并粘贴到编辑器中。 例如：清华源for ubuntu 20.04 LTS # 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释 deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal main restricted universe multiverse #</description>
+    </item>
+    
+    <item>
       <title>Research1</title>
       <link>https://lysandert.github.io/posts/research/research1/</link>
       <pubDate>Tue, 21 Feb 2023 12:20:21 +0800</pubDate>
