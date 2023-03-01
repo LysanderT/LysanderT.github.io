@@ -6,7 +6,34 @@
     <description>Recent content in 🧩 标签 on Lysander&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 23 Feb 2023 20:04:56 +0800</lastBuildDate><atom:link href="https://lysandert.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 01 Mar 2023 14:35:30 +0800</lastBuildDate><atom:link href="https://lysandert.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>iTerm2</title>
+      <link>https://lysandert.github.io/tags/iterm2/</link>
+      <pubDate>Wed, 01 Mar 2023 14:35:30 +0800</pubDate>
+      
+      <guid>https://lysandert.github.io/tags/iterm2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MySQL</title>
+      <link>https://lysandert.github.io/tags/mysql/</link>
+      <pubDate>Wed, 01 Mar 2023 14:06:30 +0800</pubDate>
+      
+      <guid>https://lysandert.github.io/tags/mysql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>shell</title>
+      <link>https://lysandert.github.io/tags/shell/</link>
+      <pubDate>Wed, 01 Mar 2023 12:12:46 +0800</pubDate>
+      
+      <guid>https://lysandert.github.io/tags/shell/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>blog</title>
       <link>https://lysandert.github.io/tags/blog/</link>
@@ -17,7 +44,7 @@
     </item>
     
     <item>
-      <title>hugo</title>
+      <title>Hugo</title>
       <link>https://lysandert.github.io/tags/hugo/</link>
       <pubDate>Thu, 23 Feb 2023 20:04:56 +0800</pubDate>
       
@@ -26,7 +53,7 @@
     </item>
     
     <item>
-      <title>chatgpt</title>
+      <title>ChatGPT</title>
       <link>https://lysandert.github.io/tags/chatgpt/</link>
       <pubDate>Thu, 23 Feb 2023 19:07:35 +0800</pubDate>
       
@@ -35,7 +62,7 @@
     </item>
     
     <item>
-      <title>vscode</title>
+      <title>VSCode</title>
       <link>https://lysandert.github.io/tags/vscode/</link>
       <pubDate>Thu, 23 Feb 2023 19:07:35 +0800</pubDate>
       
@@ -44,11 +71,11 @@
     </item>
     
     <item>
-      <title>C&#43;&#43; STL</title>
-      <link>https://lysandert.github.io/tags/c&#43;&#43;-stl/</link>
+      <title>C&#43;&#43;</title>
+      <link>https://lysandert.github.io/tags/c&#43;&#43;/</link>
       <pubDate>Thu, 23 Feb 2023 13:44:00 +0800</pubDate>
       
-      <guid>https://lysandert.github.io/tags/c&#43;&#43;-stl/</guid>
+      <guid>https://lysandert.github.io/tags/c&#43;&#43;/</guid>
       <description></description>
     </item>
     
@@ -71,7 +98,7 @@
     </item>
     
     <item>
-      <title>ubuntu</title>
+      <title>Ubuntu</title>
       <link>https://lysandert.github.io/tags/ubuntu/</link>
       <pubDate>Tue, 21 Feb 2023 16:44:43 +0800</pubDate>
       

@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>MySQL 常用命令 | Lysander&#39;s Blog</title>
+<meta name="keywords" content="">
+<meta name="description" content="run from terminal mysql -uroot -p &gt;&gt; 输入密码 attention 命令、检索均不区分大小写。习惯上将命令关键字大写，也可以通过配置sql让检索区分大小写 basic # 显示库列表 show databases; # 创建新库 create database &lt;d_name&gt;; # 使用这个库 use &lt;d_name&gt;; # 显示表列表 show tables; # 显示列（col）列表 show columns from &lt;table_name&gt;; describe &lt;col_name&gt;; select 无序检索 # select关键字 select &lt;col_name1&gt;, &lt;col_name2&gt;, ... from &lt;table_name&gt;; # a single col is also valid # * means all (like in python)">
+<meta name="author" content="Lysander">
+<link rel="canonical" href="https://lysandert.github.io/posts/blog/mysql/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.0ce26d32f6830dc0977ffcea19c70c41672c351d55c2e6b0a2a6eb39ab92cb19.css" integrity="sha256-DOJtMvaDDcCXf/zqGccMQWcsNR1VwuawoqbrOauSyxk=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+        onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://lysandert.github.io/img/cai.gif">
+<link rel="icon" type="image/png" sizes="16x16" href="https://lysandert.github.io/img/cai.gif">
+<link rel="icon" type="image/png" sizes="32x32" href="https://lysandert.github.io/img/cai.gif">
+<link rel="apple-touch-icon" href="https://lysandert.github.io/img/cai.gif">
+<link rel="mask-icon" href="https://lysandert.github.io/img/cai.gif">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+<script defer src="https://unpkg.com/mermaid@8.8.1/dist/mermaid.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+<script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.min.js"></script>
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = ""; 
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<meta property="og:title" content="MySQL 常用命令" />
+<meta property="og:description" content="run from terminal mysql -uroot -p &gt;&gt; 输入密码 attention 命令、检索均不区分大小写。习惯上将命令关键字大写，也可以通过配置sql让检索区分大小写 basic # 显示库列表 show databases; # 创建新库 create database &lt;d_name&gt;; # 使用这个库 use &lt;d_name&gt;; # 显示表列表 show tables; # 显示列（col）列表 show columns from &lt;table_name&gt;; describe &lt;col_name&gt;; select 无序检索 # select关键字 select &lt;col_name1&gt;, &lt;col_name2&gt;, ... from &lt;table_name&gt;; # a single col is also valid # * means all (like in python)" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://lysandert.github.io/posts/blog/mysql/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-03-01T14:06:30+08:00" />
+<meta property="article:modified_time" content="2023-03-01T14:06:30+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="MySQL 常用命令"/>
+<meta name="twitter:description" content="run from terminal mysql -uroot -p &gt;&gt; 输入密码 attention 命令、检索均不区分大小写。习惯上将命令关键字大写，也可以通过配置sql让检索区分大小写 basic # 显示库列表 show databases; # 创建新库 create database &lt;d_name&gt;; # 使用这个库 use &lt;d_name&gt;; # 显示表列表 show tables; # 显示列（col）列表 show columns from &lt;table_name&gt;; describe &lt;col_name&gt;; select 无序检索 # select关键字 select &lt;col_name1&gt;, &lt;col_name2&gt;, ... from &lt;table_name&gt;; # a single col is also valid # * means all (like in python)"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+
+        {
+          "@type": "ListItem",
+          "position":  2 ,
+          "name": "📚文章",
+          "item": "https://lysandert.github.io/posts/"
+        },
+
+        {
+          "@type": "ListItem",
+          "position":  3 ,
+          "name": "👨🏻‍💻 技术",
+          "item": "https://lysandert.github.io/posts/blog/"
+        }, 
+    {
+      "@type": "ListItem",
+      "position":  4 ,
+      "name": "MySQL 常用命令",
+      "item": "https://lysandert.github.io/posts/blog/mysql/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "MySQL 常用命令",
+  "name": "MySQL 常用命令",
+  "description": "run from terminal mysql -uroot -p \u0026gt;\u0026gt; 输入密码 attention 命令、检索均不区分大小写。习惯上将命令关键字大写，也可以通过配置sql让检索区分大小写 basic # 显示库列表 show databases; # 创建新库 create database \u0026lt;d_name\u0026gt;; # 使用这个库 use \u0026lt;d_name\u0026gt;; # 显示表列表 show tables; # 显示列（col）列表 show columns from \u0026lt;table_name\u0026gt;; describe \u0026lt;col_name\u0026gt;; select 无序检索 # select关键字 select \u0026lt;col_name1\u0026gt;, \u0026lt;col_name2\u0026gt;, ... from \u0026lt;table_name\u0026gt;; # a single col is also valid # * means all (like in python)",
+  "keywords": [
+    ""
+  ],
+  "articleBody": "run from terminal\nmysql -uroot -p \u003e\u003e 输入密码 attention 命令、检索均不区分大小写。习惯上将命令关键字大写，也可以通过配置sql让检索区分大小写 basic # 显示库列表 show databases; # 创建新库 create database \u003cd_name\u003e; # 使用这个库 use \u003cd_name\u003e; # 显示表列表 show tables; # 显示列（col）列表 show columns from \u003ctable_name\u003e; describe \u003ccol_name\u003e; select 无序检索 # select关键字 select \u003ccol_name1\u003e, \u003ccol_name2\u003e, ... from \u003ctable_name\u003e; # a single col is also valid # * means all (like in python) select * from \u003ctable_name\u003e; # 从start(index从0开始,默认0，可选参数)开始选length行 select \u003ccol_name1\u003e from \u003ctable_name\u003e limit (start,) length; # 完全限定 select \u003ctable_name\u003e.\u003ccol_name\u003e from \u003cd_name\u003e.\u003ctable_name\u003e; 排序检索 # order by 关键字 # 先按col_3排序，如果并列则按col_4 # 默认升序(A-Z)，加DESC转换某[一列]为降序 select \u003ccol_1\u003e, \u003ccol_2\u003e , ... from \u003ctable_name\u003e order by \u003ccol_3\u003e DESC, \u003ccol_4\u003e; 过滤检索 操作符 =, !=, \u003c, \u003c=, \u003e, \u003e= \u003c\u003e 相当于!= BETWEEN a AND b IS NULL 空值检查 # where 关键字 select \u003ccol\u003e from \u003ctable\u003e where \u003ccol2\u003e = 'lysander'; # 值可以是数值也可以是字符串（用单引号） SELECT \u003ccol\u003e FROM \u003ctable\u003e WHERE \u003ccol_\u003e BETWEEN 5 AND 10; 逻辑运算符 AND 和，优先级高于OR，可用圆括号（）改变优先级 OR IN，用到圆括号()；可实现OR的功能，但速度更快，也有更多其他功能比如包含SELECT语句 NOT 否定它后面的一切条件，可用于找出与条件不匹配的行 SELECT \u003ccol\u003e FROM \u003ctable\u003e WHERE \u003ccol1\u003e IN (3,4,5,6) AND \u003ccol2\u003e \u003e= 10; 通配符(模糊匹配) 需要先用LIKE操作符\n% 表示任何字符出现任意次数（包括0次） _ 表示任何字符出现exactly一次 # % # 以str开头的 SELECT prod_id, prod_name FROM products WHERE prod_name LIKE 'str%'; # 以str结尾的 SELECT prod_id, prod_name FROM products WHERE prod_name LIKE '%str'; # str在中间的 SELECT prod_id, prod_name FROM products WHERE prod_name LIKE '%str%'; # 以str1开头，以str2结尾的 SELECT prod_id, prod_name FROM products WHERE prod_name LIKE 'str1%str2'; # _用法与%相同，也可组合使用 SELECT prod_id, prod_name FROM products WHERE prod_name LIKE '%str_'; 正则表达式 关键字REGEXP(regular expression)\n# 基本字符匹配-所有包含'1000'的 SELECT prod_name FROM products WHERE prod_name REGEXP '1000'; # dot表示匹配任意**一个**字符 REGEXP '.000'; # 可见1000和2000都会被筛选出（虽然这个例子里面加不加dot都不会对结果有影响） +--------------+ | prod_name | +--------------+ | JetPack 1000 | | JetPack 2000 | +--------------+ # OR REGEXP '1000|2000' # 匹配几个字符之一 REGEXP '[123] ton' +-------------+ | prod_name | +-------------+ | 1 ton anvil | | 2 ton anvil | +-------------+ # 匹配范围 REGEXP '[1-3] ton' # 等价上一句 REGEXP '[a-z]' # 转义符用// REGEXP '//.' # 表示检索dot 匹配字符类\n[:alnum:] 任意字母和数字（同[a-zA-Z0-9]） [:alpha:] 任意字符（同[a-zA-Z]） [:blank:] 空格和制表（同[\\t]） [:cntrl:] ASCII控制字符（ASCII 0到31和127） [:digit:] 任意数字（同[0-9]） [:graph:] 与[:print:]相同，但不包括空格 [:lower:] 任意小写字母（同[a-z]） [:print:] 任意可打印字符 [:punct:] 既不在[:alnum:]又不在[:cntrl:]中的任意字符 [:space:] 包括空格在内的任意空白字符（同[\\f\\n\\r\\t\\v]） [:upper:] 任意大写字母（同[A-Z]） [:xdigit:] 任意十六进制数字（同[a-fA-F0-9]） 匹配多个实例\n* 0个或多个匹配 + 1个或多个匹配（等于{1,}） ? 0个或1个匹配（等于{0,1}） {n} 指定数目的匹配 {n,} 不少于指定数目的匹配 {n,m} 匹配数目的范围（m不超过255） # 示例 SELECT prod_name FROM products WHERE prod_name REGEXP '\\\\([0-9] sticks?\\\\)' order by prod_name; +----------------+ | prod_name | +----------------+ | TNT (1 stick) | | TNT (5 sticks) | +----------------+ SELECT prod_name FROM products WHERE prod_name REGEXP '[[:digit:]]{4}' order by prod_name; SELECT prod_name FROM products WHERE prod_name REGEXP '[0-9][0-9][0-9][0-9]' order by prod_name; # 两者等价 +--------------+ | prod_name | +--------------+ | JetPack 1000 | | JetPack 2000 | +--------------+ 定位符\n^ 文本的开始 $ 文本的结尾 [[:\u003c:]] 词的开始 [[:\u003e:]] 词的结尾 # 示例 SELECT name FROM person_tbl WHERE name REGEXP '^[aeiou]|ok$'; # 查找name字段中以元音字符开头或以'ok'字符串结尾的所有数据 ",
+  "wordCount" : "1278",
+  "inLanguage": "en",
+  "datePublished": "2023-03-01T14:06:30+08:00",
+  "dateModified": "2023-03-01T14:06:30+08:00",
+  "author":[{
+    "@type": "Person",
+    "name": "Lysander"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://lysandert.github.io/posts/blog/mysql/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Lysander's Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://lysandert.github.io/img/cai.gif"
+    }
+  }
+}
+</script>
+</head>
+
+<body class=" dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://lysandert.github.io" accesskey="h" title="Lysander&#39;s Blog (Alt + H)">
+            <img src="https://lysandert.github.io/img/cai.gif" alt="logo" aria-label="logo"
+                 height="35">Lysander&#39;s Blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                         stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                         stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://lysandert.github.io/search" title="搜索 (Alt &#43; /)" accesskey=/>
+                <span>搜索</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://lysandert.github.io/" title="主页">
+                <span>主页</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://lysandert.github.io/tags" title="标签">
+                <span>标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://lysandert.github.io/archives/" title="时间轴">
+                <span>时间轴</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://lysandert.github.io/about" title="关于">
+                <span>关于</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://lysandert.github.io/links" title="友链">
+                <span>友链</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main page">
+<style>
+    i[id*="post_meta_style"] {
+        display: flex;
+        align-items: center;
+        margin: 0 0 10px 0;
+    }
+</style>
+
+<article class="post-single">
+    <div id="single-content">
+        <header class="post-header">
+            <div class="breadcrumbs"><a href="https://lysandert.github.io">🏠 主页</a>&nbsp;»&nbsp;<a href="https://lysandert.github.io/posts/">📚文章</a>&nbsp;»&nbsp;<a href="https://lysandert.github.io/posts/blog/">👨🏻‍💻 技术</a></div>
+            <h1 class="post-title">
+                MySQL 常用命令
+            </h1>
+            <div class="post-meta"><style>
+    i[id*="post_meta_style"] {
+        display: flex;
+        align-items: center;
+        margin: 0 0 10px 0;
+    }
+
+    .parent-post-meta {
+        display: flex;
+        flex-wrap: wrap;
+        opacity: 0.8;
+    }
+</style>
+
+<span class="parent-post-meta">
+    <span id="post_meta_style_1">
+        <span class="fa fa-calendar-check-o"></span>
+        <span>2023-03-01
+            &nbsp;&nbsp;
+        </span>
+    </span>
+    
+    
+    
+    
+    
+    
+    
+    <span id="post_meta_style_3">
+        <span class="fa fa-file-word-o"></span>
+        <span>1278字
+            &nbsp;&nbsp;
+        </span>
+    </span>
+    <span id="post_meta_style_4">
+        <span class="fa fa-clock-o"></span>
+        <span>3分钟
+            &nbsp;&nbsp;
+        </span>
+    </span>
+    <span id="post_meta_style_5">
+        <span class="fa fa-user-o"></span>
+        <span>Lysander
+            &nbsp;&nbsp;
+        </span>
+    </span>
+    <span id="post_meta_style_6">
+        <span class="fa fa-tags" style="opacity: 0.8"></span>
+        <span>
+            <span class="post-tags-meta">
+                <a href="https://lysandert.github.io/tags/mysql/" style="color: var(--secondary)!important;">MySQL</a>
+            </span>
+        </span>
+    </span>
+</span>
+<span style="opacity: 0.8;">
+                    <span id="post_meta_style_7">
+                        &nbsp;&nbsp;
+                        <span class="fa fa-eye" ></span>
+                        <span>
+                            <span id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv"></span></span>
+                            &nbsp;&nbsp;
+                        </span>
+                    </span>
+                    <span id="post_meta_style_8">
+                        <span class="fa fa-commenting-o"></span>
+                        <span>
+                            <script src="https://cdn.staticfile.org/twikoo/1.5.8/twikoo.all.min.js"></script>
+                            <script>
+                                let url = document.documentURI
+                                
+                                let dnsUrl = "https://lysandert.github.io"
+                                let urlSplit = url.split(dnsUrl)
+                                let finalUrl = urlSplit[1]
+                                if (finalUrl[0] !== '/') {
+                                    finalUrl = '/'+finalUrl
+                                }
+                                twikoo.getCommentsCount({
+                                    envId:  null , 
+                                region:  null , 
+                                urls: [ 
+                                    
+                                    finalUrl,
+                                ],
+                                    includeReply: false 
+                                }).then(function (res) {
+                                    let count = res[0].count
+                                    const obj = document.getElementById("comment_count");
+                                    obj.innerText = count
+                                    
+                                    
+                                    
+                                }).catch(function (err) {
+                                    
+                                    console.error(err);
+                                });
+                            </script>
+                            <span id="comment_count"></span>
+                        </span>
+                    </span>
+                </span>
+
+</div>
+        </header> <aside id="toc-container" class="toc-container wide">
+    <div class="toc">
+        <details  open>
+            <summary accesskey="c" title="(Alt + C)">
+                <span class="details">文章目录</span>
+            </summary>
+
+            <div class="inner"><ul>
+                    <li>
+                        <a href="#attention" aria-label="attention">attention</a></li>
+                    <li>
+                        <a href="#basic" aria-label="basic">basic</a></li>
+                    <li>
+                        <a href="#select" aria-label="select">select</a><ul>
+                            
+                    <li>
+                        <a href="#%e6%97%a0%e5%ba%8f%e6%a3%80%e7%b4%a2" aria-label="无序检索">无序检索</a></li>
+                    <li>
+                        <a href="#%e6%8e%92%e5%ba%8f%e6%a3%80%e7%b4%a2" aria-label="排序检索">排序检索</a></li>
+                    <li>
+                        <a href="#%e8%bf%87%e6%bb%a4%e6%a3%80%e7%b4%a2" aria-label="过滤检索">过滤检索</a><ul>
+                            
+                    <li>
+                        <a href="#%e6%93%8d%e4%bd%9c%e7%ac%a6" aria-label="操作符">操作符</a></li>
+                    <li>
+                        <a href="#%e9%80%bb%e8%be%91%e8%bf%90%e7%ae%97%e7%ac%a6" aria-label="逻辑运算符">逻辑运算符</a></li>
+                    <li>
+                        <a href="#%e9%80%9a%e9%85%8d%e7%ac%a6%e6%a8%a1%e7%b3%8a%e5%8c%b9%e9%85%8d" aria-label="通配符(模糊匹配)">通配符(模糊匹配)</a></li>
+                    <li>
+                        <a href="#%e6%ad%a3%e5%88%99%e8%a1%a8%e8%be%be%e5%bc%8f" aria-label="正则表达式">正则表达式</a>
+                    </li>
+                </ul>
+                </li>
+                </ul>
+                </li>
+                </ul>
+            </div>
+        </details>
+    </div>
+</aside>
+<script>
+    let activeElement;
+    let elements;
+    window.addEventListener('DOMContentLoaded', function (event) {
+        checkTocPosition();
+
+        elements = document.querySelectorAll('h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]');
+         
+         activeElement = elements[0];
+         const id = encodeURI(activeElement.getAttribute('id')).toLowerCase();
+         document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+     }, false);
+
+    window.addEventListener('resize', function(event) {
+        checkTocPosition();
+    }, false);
+
+    window.addEventListener('scroll', () => {
+        
+        activeElement = Array.from(elements).find((element) => {
+            if ((getOffsetTop(element) - window.pageYOffset) > 0 && 
+                (getOffsetTop(element) - window.pageYOffset) < window.innerHeight/2) {
+                return element;
+            }
+        }) || activeElement
+
+        elements.forEach(element => {
+             const id = encodeURI(element.getAttribute('id')).toLowerCase();
+             if (element === activeElement){
+                 document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+             } else {
+                 document.querySelector(`.inner ul li a[href="#${id}"]`).classList.remove('active');
+             }
+         })
+     }, false);
+
+    const main = parseInt(getComputedStyle(document.body).getPropertyValue('--article-width'), 10);
+    const toc = parseInt(getComputedStyle(document.body).getPropertyValue('--toc-width'), 10);
+    const gap = parseInt(getComputedStyle(document.body).getPropertyValue('--gap'), 10);
+
+    function checkTocPosition() {
+        const width = document.body.scrollWidth;
+
+        if (width - main - (toc * 2) - (gap * 4) > 0) {
+            document.getElementById("toc-container").classList.add("wide");
+        } else {
+            document.getElementById("toc-container").classList.remove("wide");
+        }
+    }
+
+    function getOffsetTop(element) {
+        if (!element.getClientRects().length) {
+            return 0;
+        }
+        let rect = element.getBoundingClientRect();
+        let win = element.ownerDocument.defaultView;
+        return rect.top + win.pageYOffset;   
+    }
+</script>
+
+        <div class="post-content"><p>run from terminal</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-zsh" data-lang="zsh"><span style="display:flex;"><span>mysql -uroot -p
+</span></span><span style="display:flex;"><span>&gt;&gt; 输入密码
+</span></span></code></pre></div><h2 id="attention">attention<a hidden class="anchor" aria-hidden="true" href="#attention">#</a></h2>
+<ol>
+<li>命令、检索均不区分大小写。习惯上将命令关键字大写，也可以通过配置sql让检索区分大小写</li>
+</ol>
+<h2 id="basic">basic<a hidden class="anchor" aria-hidden="true" href="#basic">#</a></h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-mysql" data-lang="mysql"><span style="display:flex;"><span><span style="color:#75715e"># 显示库列表
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">show</span> <span style="color:#66d9ef">databases</span>;
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 创建新库
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">create</span> <span style="color:#66d9ef">database</span> <span style="color:#f92672">&lt;</span>d_name<span style="color:#f92672">&gt;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 使用这个库
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">use</span> <span style="color:#f92672">&lt;</span>d_name<span style="color:#f92672">&gt;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 显示表列表
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">show</span> <span style="color:#66d9ef">tables</span>;
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 显示列（col）列表
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">show</span> columns <span style="color:#66d9ef">from</span> <span style="color:#f92672">&lt;</span>table_name<span style="color:#f92672">&gt;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">describe</span> <span style="color:#f92672">&lt;</span>col_name<span style="color:#f92672">&gt;</span>;
+</span></span></code></pre></div><h2 id="select">select<a hidden class="anchor" aria-hidden="true" href="#select">#</a></h2>
+<h3 id="无序检索">无序检索<a hidden class="anchor" aria-hidden="true" href="#无序检索">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-mysql" data-lang="mysql"><span style="display:flex;"><span><span style="color:#75715e"># select关键字
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">select</span> <span style="color:#f92672">&lt;</span>col_name1<span style="color:#f92672">&gt;</span>, <span style="color:#f92672">&lt;</span>col_name2<span style="color:#f92672">&gt;</span>, ... <span style="color:#66d9ef">from</span> <span style="color:#f92672">&lt;</span>table_name<span style="color:#f92672">&gt;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># a single col is also valid
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># * means all (like in python)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> <span style="color:#f92672">&lt;</span>table_name<span style="color:#f92672">&gt;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 从start(index从0开始,默认0，可选参数)开始选length行
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">select</span> <span style="color:#f92672">&lt;</span>col_name1<span style="color:#f92672">&gt;</span> 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">from</span> <span style="color:#f92672">&lt;</span>table_name<span style="color:#f92672">&gt;</span> 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">limit</span> (start,) length;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 完全限定
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">select</span> <span style="color:#f92672">&lt;</span>table_name<span style="color:#f92672">&gt;</span>.<span style="color:#f92672">&lt;</span>col_name<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">from</span> <span style="color:#f92672">&lt;</span>d_name<span style="color:#f92672">&gt;</span>.<span style="color:#f92672">&lt;</span>table_name<span style="color:#f92672">&gt;</span>;
+</span></span></code></pre></div><h3 id="排序检索">排序检索<a hidden class="anchor" aria-hidden="true" href="#排序检索">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-mysql" data-lang="mysql"><span style="display:flex;"><span><span style="color:#75715e"># order by 关键字
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"># 先按col_3排序，如果并列则按col_4
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"># 默认升序(A-Z)，加DESC转换某[一列]为降序
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">select</span> <span style="color:#f92672">&lt;</span>col_1<span style="color:#f92672">&gt;</span>, <span style="color:#f92672">&lt;</span>col_2<span style="color:#f92672">&gt;</span> , ...
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">from</span> <span style="color:#f92672">&lt;</span>table_name<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">order</span> <span style="color:#66d9ef">by</span> <span style="color:#f92672">&lt;</span>col_3<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">DESC</span>, <span style="color:#f92672">&lt;</span>col_4<span style="color:#f92672">&gt;</span>;
+</span></span></code></pre></div><h3 id="过滤检索">过滤检索<a hidden class="anchor" aria-hidden="true" href="#过滤检索">#</a></h3>
+<h4 id="操作符">操作符<a hidden class="anchor" aria-hidden="true" href="#操作符">#</a></h4>
+<ol>
+<li>=, !=, &lt;, &lt;=, &gt;, &gt;=</li>
+<li>&lt;&gt; 相当于!=</li>
+<li>BETWEEN a AND b</li>
+<li>IS NULL 空值检查</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-mysql" data-lang="mysql"><span style="display:flex;"><span><span style="color:#75715e"># where 关键字
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">select</span> <span style="color:#f92672">&lt;</span>col<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">from</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">table</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">where</span> <span style="color:#f92672">&lt;</span>col2<span style="color:#f92672">&gt;</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;lysander&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 值可以是数值也可以是字符串（用单引号）
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">&lt;</span>col<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">FROM</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">table</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">WHERE</span> <span style="color:#f92672">&lt;</span>col_<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">BETWEEN</span> <span style="color:#ae81ff">5</span> <span style="color:#66d9ef">AND</span> <span style="color:#ae81ff">10</span>;
+</span></span></code></pre></div><h4 id="逻辑运算符">逻辑运算符<a hidden class="anchor" aria-hidden="true" href="#逻辑运算符">#</a></h4>
+<ol>
+<li>AND 和，优先级高于OR，可用圆括号（）改变优先级</li>
+<li>OR</li>
+<li>IN，用到圆括号()；可实现OR的功能，但速度更快，也有更多其他功能比如包含SELECT语句</li>
+<li>NOT 否定它后面的一切条件，可用于找出与条件不匹配的行</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-mysql" data-lang="mysql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">&lt;</span>col<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">FROM</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">table</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">WHERE</span> <span style="color:#f92672">&lt;</span>col1<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">IN</span> (<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">6</span>) <span style="color:#66d9ef">AND</span> <span style="color:#f92672">&lt;</span>col2<span style="color:#f92672">&gt;</span> <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">10</span>;
+</span></span></code></pre></div><h4 id="通配符模糊匹配">通配符(模糊匹配)<a hidden class="anchor" aria-hidden="true" href="#通配符模糊匹配">#</a></h4>
+<p>需要先用LIKE操作符</p>
+<ol>
+<li>% 表示任何字符出现任意次数（包括0次）</li>
+<li>_ 表示任何字符出现exactly一次</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-mysql" data-lang="mysql"><span style="display:flex;"><span><span style="color:#75715e"># %
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"># 以str开头的
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">SELECT</span> prod_id, prod_name <span style="color:#66d9ef">FROM</span> products <span style="color:#66d9ef">WHERE</span> prod_name <span style="color:#66d9ef">LIKE</span> <span style="color:#e6db74">&#39;str%&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 以str结尾的
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">SELECT</span> prod_id, prod_name <span style="color:#66d9ef">FROM</span> products <span style="color:#66d9ef">WHERE</span> prod_name <span style="color:#66d9ef">LIKE</span> <span style="color:#e6db74">&#39;%str&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># str在中间的
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">SELECT</span> prod_id, prod_name <span style="color:#66d9ef">FROM</span> products <span style="color:#66d9ef">WHERE</span> prod_name <span style="color:#66d9ef">LIKE</span> <span style="color:#e6db74">&#39;%str%&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 以str1开头，以str2结尾的
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">SELECT</span> prod_id, prod_name <span style="color:#66d9ef">FROM</span> products <span style="color:#66d9ef">WHERE</span> prod_name <span style="color:#66d9ef">LIKE</span> <span style="color:#e6db74">&#39;str1%str2&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># _用法与%相同，也可组合使用
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">SELECT</span> prod_id, prod_name <span style="color:#66d9ef">FROM</span> products <span style="color:#66d9ef">WHERE</span> prod_name <span style="color:#66d9ef">LIKE</span> <span style="color:#e6db74">&#39;%str_&#39;</span>;
+</span></span></code></pre></div><h4 id="正则表达式">正则表达式<a hidden class="anchor" aria-hidden="true" href="#正则表达式">#</a></h4>
+<p>关键字REGEXP(regular expression)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-mysql" data-lang="mysql"><span style="display:flex;"><span><span style="color:#75715e"># 基本字符匹配-所有包含&#39;1000&#39;的
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">SELECT</span> prod_name <span style="color:#66d9ef">FROM</span> products <span style="color:#66d9ef">WHERE</span> prod_name <span style="color:#66d9ef">REGEXP</span> <span style="color:#e6db74">&#39;1000&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># dot表示匹配任意**一个**字符
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">REGEXP</span> <span style="color:#e6db74">&#39;.000&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 可见1000和2000都会被筛选出（虽然这个例子里面加不加dot都不会对结果有影响）
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">+--------------+</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> prod_name    <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">+--------------+</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> JetPack <span style="color:#ae81ff">1000</span> <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> JetPack <span style="color:#ae81ff">2000</span> <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">+--------------+</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># OR
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">REGEXP</span> <span style="color:#e6db74">&#39;1000|2000&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 匹配几个字符之一
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">REGEXP</span> <span style="color:#e6db74">&#39;[123] ton&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">+-------------+</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> prod_name   <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">+-------------+</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#ae81ff">1</span> ton anvil <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#ae81ff">2</span> ton anvil <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">+-------------+</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 匹配范围
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">REGEXP</span> <span style="color:#e6db74">&#39;[1-3] ton&#39;</span> <span style="color:#75715e"># 等价上一句
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">REGEXP</span> <span style="color:#e6db74">&#39;[a-z]&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 转义符用//
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">REGEXP</span> <span style="color:#e6db74">&#39;//.&#39;</span>  <span style="color:#75715e"># 表示检索dot
+</span></span></span></code></pre></div><p>匹配字符类</p>
+<ul>
+<li>[:alnum:] 任意字母和数字（同[a-zA-Z0-9]）</li>
+<li>[:alpha:] 任意字符（同[a-zA-Z]）</li>
+<li>[:blank:] 空格和制表（同[\t]）</li>
+<li>[:cntrl:] ASCII控制字符（ASCII 0到31和127）</li>
+<li>[:digit:] 任意数字（同[0-9]）</li>
+<li>[:graph:] 与[:print:]相同，但不包括空格</li>
+<li>[:lower:] 任意小写字母（同[a-z]）</li>
+<li>[:print:] 任意可打印字符</li>
+<li>[:punct:] 既不在[:alnum:]又不在[:cntrl:]中的任意字符</li>
+<li>[:space:] 包括空格在内的任意空白字符（同[\f\n\r\t\v]）</li>
+<li>[:upper:] 任意大写字母（同[A-Z]）</li>
+<li>[:xdigit:] 任意十六进制数字（同[a-fA-F0-9]）</li>
+</ul>
+<p>匹配多个实例</p>
+<ul>
+<li>* 0个或多个匹配</li>
+<li>+ 1个或多个匹配（等于{1,}）</li>
+<li>? 0个或1个匹配（等于{0,1}）</li>
+<li>{n} 指定数目的匹配</li>
+<li>{n,} 不少于指定数目的匹配</li>
+<li>{n,m} 匹配数目的范围（m不超过255）</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-mysql" data-lang="mysql"><span style="display:flex;"><span><span style="color:#75715e"># 示例
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">SELECT</span> prod_name <span style="color:#66d9ef">FROM</span> products <span style="color:#66d9ef">WHERE</span> prod_name <span style="color:#66d9ef">REGEXP</span> <span style="color:#e6db74">&#39;\\([0-9] sticks?\\)&#39;</span> <span style="color:#66d9ef">order</span> <span style="color:#66d9ef">by</span> prod_name;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">+----------------+</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> prod_name      <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">+----------------+</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#a6e22e">TNT</span> (<span style="color:#ae81ff">1</span> stick)  <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#a6e22e">TNT</span> (<span style="color:#ae81ff">5</span> sticks) <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">+----------------+</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> prod_name <span style="color:#66d9ef">FROM</span> products <span style="color:#66d9ef">WHERE</span> prod_name <span style="color:#66d9ef">REGEXP</span> <span style="color:#e6db74">&#39;[[:digit:]]{4}&#39;</span> <span style="color:#66d9ef">order</span> <span style="color:#66d9ef">by</span> prod_name;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> prod_name <span style="color:#66d9ef">FROM</span> products <span style="color:#66d9ef">WHERE</span> prod_name <span style="color:#66d9ef">REGEXP</span> <span style="color:#e6db74">&#39;[0-9][0-9][0-9][0-9]&#39;</span> <span style="color:#66d9ef">order</span> <span style="color:#66d9ef">by</span> prod_name;
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 两者等价
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">+--------------+</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> prod_name    <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">+--------------+</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> JetPack <span style="color:#ae81ff">1000</span> <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> JetPack <span style="color:#ae81ff">2000</span> <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">+--------------+</span>
+</span></span></code></pre></div><p>定位符</p>
+<ul>
+<li>^ 文本的开始</li>
+<li>$ 文本的结尾</li>
+<li>[[:&lt;:]] 词的开始</li>
+<li>[[:&gt;:]] 词的结尾</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-mysql" data-lang="mysql"><span style="display:flex;"><span><span style="color:#75715e"># 示例
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">SELECT</span> name <span style="color:#66d9ef">FROM</span> person_tbl <span style="color:#66d9ef">WHERE</span> name <span style="color:#66d9ef">REGEXP</span> <span style="color:#e6db74">&#39;^[aeiou]|ok$&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 查找name字段中以元音字符开头或以&#39;ok&#39;字符串结尾的所有数据
+</span></span></span></code></pre></div>
+
+        </div>
+        <div class="post-reward">
+            <div style="padding: 0 0 0 0; margin: 0 0 0 0; width: 100%; font-size:16px; text-align: center;">
+                <div id="QR" style="opacity: 0;">
+                    <div id="wechat" style="display: inline-block">
+                        <a class="fancybox" rel="group">
+                            <img id="wechat_qr" src="https://lysandert.github.io/img/wechat_pay.png" alt="wechat_pay"></a>
+                        <p>微信</p>
+                    </div>
+                    <div id="alipay" style="display: inline-block">
+                        <a class="fancybox" rel="group">
+                            <img id="alipay_qr" src="https://lysandert.github.io/img/alipay.png" alt="alipay"></a>
+                        <p>支付宝</p>
+                    </div>
+                </div>
+                <button id="rewardButton"
+                        onclick="
+                    var qr = document.getElementById('QR');
+                    if (qr.style.opacity === '0') {
+                        qr.style.opacity='1';
+                    } else {
+                        qr.style.opacity='0'
+                    }"
+                >
+                    <span>🧧 鼓励</span>
+                </button>
+            </div>
+        </div>
+
+        <footer class="post-footer">
+            
+<nav class="paginav">
+  <a class="prev" href="https://lysandert.github.io/posts/blog/iterm2/">
+    <span class="title">« 上一页</span>
+    <br>
+    <span>Iterm2 常用快捷键</span>
+  </a>
+  <a class="next" href="https://lysandert.github.io/posts/blog/mycli/">
+    <span class="title">下一页 »</span>
+    <br>
+    <span>Mycli-MySQL办公利器</span>
+  </a>
+</nav>
+
+        </footer>
+    </div>
+
+<style>
+    .comments_details summary::marker {
+        font-size: 20px;
+        content: '👉展开评论';
+        color: var(--content);
+    }
+    .comments_details[open] summary::marker{
+        font-size: 20px;
+        content: '👇关闭评论';
+        color: var(--content);
+    }
+</style>
+
+
+<div>
+<script src="https://utteranc.es/client.js"
+repo="LysanderT/LysanderT.github.io"
+issue-term="pathname"
+theme="github-dark"
+crossorigin="anonymous"
+async>
+</script>
+</div>
+
+
+</article>
+</main>
+
+<footer class="footer">
+    <span>
+        Copyright
+        &copy;
+        2020-2023
+        <a href="https://lysandert.github.io" style="color:#939393;">Lysander&#39;s Blog</a>
+        All Rights Reserved
+    </span>
+    <a href="https://beian.miit.gov.cn/" target="_blank" style="color:#939393;"></a>&nbsp;
+    <span>
+        <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=null"
+           style="display:inline-block;text-decoration:none;height:20px;color:#939393;">
+            <img src="" style="float:left;margin: 0px 5px 0px 0px;"/>
+            
+        </a>
+    </span>
+    <span id="busuanzi_container">
+        <span class="fa fa-user"></span> <span id="busuanzi_value_site_uv"></span>
+        <span class="fa fa-eye"></span> <span id="busuanzi_value_site_pv"></span>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <span class="topInner">
+        <svg class="topSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+            <path d="M12 6H0l6-6z"/>
+        </svg>
+        <span id="read_progress"></span>
+    </span>
+</a>
+
+<script>
+    document.addEventListener('scroll', function (e) {
+        const readProgress = document.getElementById("read_progress");
+        const scrollHeight = document.documentElement.scrollHeight;
+        const clientHeight = document.documentElement.clientHeight;
+        const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        readProgress.innerText = ((scrollTop / (scrollHeight - clientHeight)).toFixed(2) * 100).toFixed(0);
+    })
+</script>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+</script>
+<script>
+    let mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        (function() {
+            document.cookie = "change-themes" + "="+ escape ("false");
+        })()
+
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    });
+</script>
+
+<script>
+    document.body.addEventListener('copy', function (e) {
+        if (window.getSelection().toString() && window.getSelection().toString().length > 50) {
+            let clipboardData = e.clipboardData || window.clipboardData;
+            if (clipboardData) {
+                e.preventDefault();
+                let htmlData = window.getSelection().toString() +
+                    '\r\n\n————————————————\r\n' +
+                    '版权声明：本文为「'+"Lysander's Blog"+'」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。' +
+                '\r\n原文链接：' + location.href;
+                let textData = window.getSelection().toString() +
+                    '\r\n\n————————————————\r\n' +
+                    '版权声明：本文为「'+"Lysander's Blog"+'」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。' +
+                '\r\n原文链接：' + location.href;
+                clipboardData.setData('text/html', htmlData);
+                clipboardData.setData('text/plain', textData);
+            }
+        }
+    });
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerText = '📄复制';
+
+        function copyingDone() {
+            copybutton.innerText = '👌🏻已复制!';
+            setTimeout(() => {
+                copybutton.innerText = '📄复制';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                let text = codeblock.textContent +
+                    '\r\n————————————————\r\n' +
+                    '版权声明：本文为「'+"Lysander's Blog"+'」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。' +
+                '\r\n原文链接：' + location.href;
+                navigator.clipboard.writeText(text);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) {}
+            selection.removeRange(range);
+        });
+
+        let language = codeblock.className.replaceAll("language-", "")
+        let macTool = document.createElement("div")
+        let macTool1 = document.createElement("div")
+        let macTool2 = document.createElement("div")
+        let macTool3 = document.createElement("div")
+        let languageType = document.createElement("div")
+        languageType.innerText = language
+        macTool.setAttribute('class', 'mac-tool')
+        macTool1.setAttribute('class', 'mac bb1')
+        macTool2.setAttribute('class', 'mac bb2')
+        macTool3.setAttribute('class', 'mac bb3')
+        languageType.setAttribute('class', 'language-type')
+        macTool.appendChild(macTool1)
+        macTool.appendChild(macTool2)
+        macTool.appendChild(macTool3)
+        macTool.appendChild(languageType)
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+            container.appendChild(macTool)
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+            container.appendChild(macTool)
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+            container.appendChild(macTool)
+        }
+    });
+</script>
+
+<script>
+    $("code[class^=language] ").on("mouseover", function () {
+        if (this.clientWidth < this.scrollWidth) {
+            $(this).css("width", "135%")
+            $(this).css("border-top-right-radius", "var(--radius)")
+        }
+    }).on("mouseout", function () {
+        $(this).css("width", "100%")
+        $(this).css("border-top-right-radius", "unset")
+    })
+</script>
+</body>
+
+</html>

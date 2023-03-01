@@ -6,7 +6,34 @@
     <description>Recent content in 👨🏻‍💻 技术 on Lysander&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 23 Feb 2023 20:04:56 +0800</lastBuildDate><atom:link href="https://lysandert.github.io/posts/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 01 Mar 2023 14:35:30 +0800</lastBuildDate><atom:link href="https://lysandert.github.io/posts/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Iterm2 常用快捷键</title>
+      <link>https://lysandert.github.io/posts/blog/iterm2/</link>
+      <pubDate>Wed, 01 Mar 2023 14:35:30 +0800</pubDate>
+      
+      <guid>https://lysandert.github.io/posts/blog/iterm2/</guid>
+      <description>标签 新建标签：command + t 关闭标签：command + w 切换标签： command + 数字 1/2 command + 左右方向键 切换全屏：command + enter 查找：command + f 分屏 新建垂直分屏：command + d 新建水平分屏：command + shift + d 切换屏幕：command + option + 方向键 command + [ 或 command + ] 查看历史命令</description>
+    </item>
+    
+    <item>
+      <title>MySQL 常用命令</title>
+      <link>https://lysandert.github.io/posts/blog/mysql/</link>
+      <pubDate>Wed, 01 Mar 2023 14:06:30 +0800</pubDate>
+      
+      <guid>https://lysandert.github.io/posts/blog/mysql/</guid>
+      <description>run from terminal mysql -uroot -p &amp;gt;&amp;gt; 输入密码 attention 命令、检索均不区分大小写。习惯上将命令关键字大写，也可以通过配置sql让检索区分大小写 basic # 显示库列表 show databases; # 创建新库 create database &amp;lt;d_name&amp;gt;; # 使用这个库 use &amp;lt;d_name&amp;gt;; # 显示表列表 show tables; # 显示列（col）列表 show columns from &amp;lt;table_name&amp;gt;; describe &amp;lt;col_name&amp;gt;; select 无序检索 # select关键字 select &amp;lt;col_name1&amp;gt;, &amp;lt;col_name2&amp;gt;, ... from &amp;lt;table_name&amp;gt;; # a single col is also valid # * means all (like in python)</description>
+    </item>
+    
+    <item>
+      <title>Mycli-MySQL办公利器</title>
+      <link>https://lysandert.github.io/posts/blog/mycli/</link>
+      <pubDate>Wed, 01 Mar 2023 12:12:46 +0800</pubDate>
+      
+      <guid>https://lysandert.github.io/posts/blog/mycli/</guid>
+      <description>使用Mycli，实现命令行mysql的代码补全与语法高亮！</description>
+    </item>
+    
     <item>
       <title>hugo博客 文内插入图片</title>
       <link>https://lysandert.github.io/posts/blog/blog_insert_pic/</link>
@@ -17,7 +44,7 @@
     </item>
     
     <item>
-      <title>VS Code ChatGPT插件</title>
+      <title>VSCode ChatGPT插件</title>
       <link>https://lysandert.github.io/posts/blog/chatgpt_plugin_for_vscode/</link>
       <pubDate>Thu, 23 Feb 2023 19:07:35 +0800</pubDate>
       
@@ -77,6 +104,15 @@
       
       <guid>https://lysandert.github.io/posts/blog/ubuntu_bug/</guid>
       <description>1. apt/apt-get update失败 1.1 尝试换源 命令行里输入 nano /etc/apt/sources.list 在打开的编辑器里将原有的源注释。 打开firefox搜索中科大/阿里/清华源（记得一定要与ubuntu的版本对应），复制并粘贴到编辑器中。 例如：清华源for ubuntu 20.04 LTS # 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释 deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal main restricted universe multiverse #</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lysandert.github.io/posts/blog/environment/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lysandert.github.io/posts/blog/environment/</guid>
+      <description></description>
     </item>
     
   </channel>

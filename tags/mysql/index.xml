@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>MySQL on Lysander&#39;s Blog</title>
+    <link>https://lysandert.github.io/tags/mysql/</link>
+    <description>Recent content in MySQL on Lysander&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 01 Mar 2023 14:06:30 +0800</lastBuildDate><atom:link href="https://lysandert.github.io/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MySQL 常用命令</title>
+      <link>https://lysandert.github.io/posts/blog/mysql/</link>
+      <pubDate>Wed, 01 Mar 2023 14:06:30 +0800</pubDate>
+      
+      <guid>https://lysandert.github.io/posts/blog/mysql/</guid>
+      <description>run from terminal mysql -uroot -p &amp;gt;&amp;gt; 输入密码 attention 命令、检索均不区分大小写。习惯上将命令关键字大写，也可以通过配置sql让检索区分大小写 basic # 显示库列表 show databases; # 创建新库 create database &amp;lt;d_name&amp;gt;; # 使用这个库 use &amp;lt;d_name&amp;gt;; # 显示表列表 show tables; # 显示列（col）列表 show columns from &amp;lt;table_name&amp;gt;; describe &amp;lt;col_name&amp;gt;; select 无序检索 # select关键字 select &amp;lt;col_name1&amp;gt;, &amp;lt;col_name2&amp;gt;, ... from &amp;lt;table_name&amp;gt;; # a single col is also valid # * means all (like in python)</description>
+    </item>
+    
+    <item>
+      <title>Mycli-MySQL办公利器</title>
+      <link>https://lysandert.github.io/posts/blog/mycli/</link>
+      <pubDate>Wed, 01 Mar 2023 12:12:46 +0800</pubDate>
+      
+      <guid>https://lysandert.github.io/posts/blog/mycli/</guid>
+      <description>使用Mycli，实现命令行mysql的代码补全与语法高亮！</description>
+    </item>
+    
+  </channel>
+</rss>
