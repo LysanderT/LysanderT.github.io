@@ -96,8 +96,8 @@ var _hmt = _hmt || [];
   "keywords": [
     ""
   ],
-  "articleBody": "run from terminal\nmysql -uroot -p \u003e\u003e 输入密码 attention 命令、检索均不区分大小写。习惯上将命令关键字大写，也可以通过配置sql让检索区分大小写 basic # 显示库列表 show databases; # 创建新库 create database \u003cd_name\u003e; # 使用这个库 use \u003cd_name\u003e; # 显示表列表 show tables; # 显示列（col）列表 show columns from \u003ctable_name\u003e; describe \u003ccol_name\u003e; select 无序检索 # select关键字 select \u003ccol_name1\u003e, \u003ccol_name2\u003e, ... from \u003ctable_name\u003e; # a single col is also valid # * means all (like in python) select * from \u003ctable_name\u003e; # 从start(index从0开始,默认0，可选参数)开始选length行 select \u003ccol_name1\u003e from \u003ctable_name\u003e limit (start,) length; # 完全限定 select \u003ctable_name\u003e.\u003ccol_name\u003e from \u003cd_name\u003e.\u003ctable_name\u003e; 排序检索 # order by 关键字 # 先按col_3排序，如果并列则按col_4 # 默认升序(A-Z)，加DESC转换某[一列]为降序 select \u003ccol_1\u003e, \u003ccol_2\u003e , ... from \u003ctable_name\u003e order by \u003ccol_3\u003e DESC, \u003ccol_4\u003e; 过滤检索 操作符 =, !=, \u003c, \u003c=, \u003e, \u003e= \u003c\u003e 相当于!= BETWEEN a AND b IS NULL 空值检查 # where 关键字 select \u003ccol\u003e from \u003ctable\u003e where \u003ccol2\u003e = 'lysander'; # 值可以是数值也可以是字符串（用单引号） SELECT \u003ccol\u003e FROM \u003ctable\u003e WHERE \u003ccol_\u003e BETWEEN 5 AND 10; 逻辑运算符 AND 和，优先级高于OR，可用圆括号（）改变优先级 OR IN，用到圆括号()；可实现OR的功能，但速度更快，也有更多其他功能比如包含SELECT语句 NOT 否定它后面的一切条件，可用于找出与条件不匹配的行 SELECT \u003ccol\u003e FROM \u003ctable\u003e WHERE \u003ccol1\u003e IN (3,4,5,6) AND \u003ccol2\u003e \u003e= 10; 通配符(模糊匹配) 需要先用LIKE操作符\n% 表示任何字符出现任意次数（包括0次） _ 表示任何字符出现exactly一次 # % # 以str开头的 SELECT prod_id, prod_name FROM products WHERE prod_name LIKE 'str%'; # 以str结尾的 SELECT prod_id, prod_name FROM products WHERE prod_name LIKE '%str'; # str在中间的 SELECT prod_id, prod_name FROM products WHERE prod_name LIKE '%str%'; # 以str1开头，以str2结尾的 SELECT prod_id, prod_name FROM products WHERE prod_name LIKE 'str1%str2'; # _用法与%相同，也可组合使用 SELECT prod_id, prod_name FROM products WHERE prod_name LIKE '%str_'; 正则表达式 关键字REGEXP(regular expression)\n# 基本字符匹配-所有包含'1000'的 SELECT prod_name FROM products WHERE prod_name REGEXP '1000'; # dot表示匹配任意**一个**字符 REGEXP '.000'; # 可见1000和2000都会被筛选出（虽然这个例子里面加不加dot都不会对结果有影响） +--------------+ | prod_name | +--------------+ | JetPack 1000 | | JetPack 2000 | +--------------+ # OR REGEXP '1000|2000' # 匹配几个字符之一 REGEXP '[123] ton' +-------------+ | prod_name | +-------------+ | 1 ton anvil | | 2 ton anvil | +-------------+ # 匹配范围 REGEXP '[1-3] ton' # 等价上一句 REGEXP '[a-z]' # 转义符用// REGEXP '//.' # 表示检索dot 匹配字符类\n[:alnum:] 任意字母和数字（同[a-zA-Z0-9]） [:alpha:] 任意字符（同[a-zA-Z]） [:blank:] 空格和制表（同[\\t]） [:cntrl:] ASCII控制字符（ASCII 0到31和127） [:digit:] 任意数字（同[0-9]） [:graph:] 与[:print:]相同，但不包括空格 [:lower:] 任意小写字母（同[a-z]） [:print:] 任意可打印字符 [:punct:] 既不在[:alnum:]又不在[:cntrl:]中的任意字符 [:space:] 包括空格在内的任意空白字符（同[\\f\\n\\r\\t\\v]） [:upper:] 任意大写字母（同[A-Z]） [:xdigit:] 任意十六进制数字（同[a-fA-F0-9]） 匹配多个实例\n* 0个或多个匹配 + 1个或多个匹配（等于{1,}） ? 0个或1个匹配（等于{0,1}） {n} 指定数目的匹配 {n,} 不少于指定数目的匹配 {n,m} 匹配数目的范围（m不超过255） # 示例 SELECT prod_name FROM products WHERE prod_name REGEXP '\\\\([0-9] sticks?\\\\)' order by prod_name; +----------------+ | prod_name | +----------------+ | TNT (1 stick) | | TNT (5 sticks) | +----------------+ SELECT prod_name FROM products WHERE prod_name REGEXP '[[:digit:]]{4}' order by prod_name; SELECT prod_name FROM products WHERE prod_name REGEXP '[0-9][0-9][0-9][0-9]' order by prod_name; # 两者等价 +--------------+ | prod_name | +--------------+ | JetPack 1000 | | JetPack 2000 | +--------------+ 定位符\n^ 文本的开始 $ 文本的结尾 [[:\u003c:]] 词的开始 [[:\u003e:]] 词的结尾 # 示例 SELECT name FROM person_tbl WHERE name REGEXP '^[aeiou]|ok$'; # 查找name字段中以元音字符开头或以'ok'字符串结尾的所有数据 ",
-  "wordCount" : "1278",
+  "articleBody": "run from terminal\nmysql -uroot -p \u003e\u003e 输入密码 attention 命令、检索均不区分大小写。习惯上将命令关键字大写，也可以通过配置sql让检索区分大小写 basic # 显示库列表 show databases; # 创建新库 create database \u003cd_name\u003e; # 使用这个库 use \u003cd_name\u003e; # 显示表列表 show tables; # 显示列（col）列表 show columns from \u003ctable_name\u003e; describe \u003ccol_name\u003e; select 无序检索 # select关键字 select \u003ccol_name1\u003e, \u003ccol_name2\u003e, ... from \u003ctable_name\u003e; # a single col is also valid # * means all (like in python) select * from \u003ctable_name\u003e; # 从start(index从0开始,默认0，可选参数)开始选length行 select \u003ccol_name1\u003e from \u003ctable_name\u003e limit (start,) length; # 完全限定 select \u003ctable_name\u003e.\u003ccol_name\u003e from \u003cd_name\u003e.\u003ctable_name\u003e; 排序检索 # order by 关键字 # 先按col_3排序，如果并列则按col_4 # 默认升序(A-Z)，加DESC转换某[一列]为降序 select \u003ccol_1\u003e, \u003ccol_2\u003e , ... from \u003ctable_name\u003e order by \u003ccol_3\u003e DESC, \u003ccol_4\u003e; 过滤检索 操作符 =, !=, \u003c, \u003c=, \u003e, \u003e= \u003c\u003e 相当于!= BETWEEN a AND b IS NULL 空值检查 # where 关键字 select \u003ccol\u003e from \u003ctable\u003e where \u003ccol2\u003e = 'lysander'; # 值可以是数值也可以是字符串（用单引号） SELECT \u003ccol\u003e FROM \u003ctable\u003e WHERE \u003ccol_\u003e BETWEEN 5 AND 10; 逻辑运算符 AND 和，优先级高于OR，可用圆括号（）改变优先级 OR IN，用到圆括号()；可实现OR的功能，但速度更快，也有更多其他功能比如包含SELECT语句 NOT 否定它后面的一切条件，可用于找出与条件不匹配的行 SELECT \u003ccol\u003e FROM \u003ctable\u003e WHERE \u003ccol1\u003e IN (3,4,5,6) AND \u003ccol2\u003e \u003e= 10; 通配符(模糊匹配) 需要先用LIKE操作符\n% 表示任何字符出现任意次数（包括0次） _ 表示任何字符出现exactly一次 # % # 以str开头的 SELECT prod_id, prod_name FROM products WHERE prod_name LIKE 'str%'; # 以str结尾的 SELECT prod_id, prod_name FROM products WHERE prod_name LIKE '%str'; # str在中间的 SELECT prod_id, prod_name FROM products WHERE prod_name LIKE '%str%'; # 以str1开头，以str2结尾的 SELECT prod_id, prod_name FROM products WHERE prod_name LIKE 'str1%str2'; # _用法与%相同，也可组合使用 SELECT prod_id, prod_name FROM products WHERE prod_name LIKE '%str_'; 正则表达式 关键字REGEXP(regular expression)\n# 基本字符匹配-所有包含'1000'的 SELECT prod_name FROM products WHERE prod_name REGEXP '1000'; # dot表示匹配任意**一个**字符 REGEXP '.000'; # 可见1000和2000都会被筛选出（虽然这个例子里面加不加dot都不会对结果有影响） +--------------+ | prod_name | +--------------+ | JetPack 1000 | | JetPack 2000 | +--------------+ # OR REGEXP '1000|2000' # 匹配几个字符之一 REGEXP '[123] ton' +-------------+ | prod_name | +-------------+ | 1 ton anvil | | 2 ton anvil | +-------------+ # 匹配范围 REGEXP '[1-3] ton' # 等价上一句 REGEXP '[a-z]' # 转义符用// REGEXP '//.' # 表示检索dot 匹配字符类\n[:alnum:] 任意字母和数字（同[a-zA-Z0-9]） [:alpha:] 任意字符（同[a-zA-Z]） [:blank:] 空格和制表（同[\\t]） [:cntrl:] ASCII控制字符（ASCII 0到31和127） [:digit:] 任意数字（同[0-9]） [:graph:] 与[:print:]相同，但不包括空格 [:lower:] 任意小写字母（同[a-z]） [:print:] 任意可打印字符 [:punct:] 既不在[:alnum:]又不在[:cntrl:]中的任意字符 [:space:] 包括空格在内的任意空白字符（同[\\f\\n\\r\\t\\v]） [:upper:] 任意大写字母（同[A-Z]） [:xdigit:] 任意十六进制数字（同[a-fA-F0-9]） 匹配多个实例\n* 0个或多个匹配 + 1个或多个匹配（等于{1,}） ? 0个或1个匹配（等于{0,1}） {n} 指定数目的匹配 {n,} 不少于指定数目的匹配 {n,m} 匹配数目的范围（m不超过255） # 示例 SELECT prod_name FROM products WHERE prod_name REGEXP '\\\\([0-9] sticks?\\\\)' order by prod_name; +----------------+ | prod_name | +----------------+ | TNT (1 stick) | | TNT (5 sticks) | +----------------+ SELECT prod_name FROM products WHERE prod_name REGEXP '[[:digit:]]{4}' order by prod_name; SELECT prod_name FROM products WHERE prod_name REGEXP '[0-9][0-9][0-9][0-9]' order by prod_name; # 两者等价 +--------------+ | prod_name | +--------------+ | JetPack 1000 | | JetPack 2000 | +--------------+ 定位符\n^ 文本的开始 $ 文本的结尾 [[:\u003c:]] 词的开始 [[:\u003e:]] 词的结尾 # 示例 SELECT name FROM person_tbl WHERE name REGEXP '^[aeiou]|ok$'; # 查找name字段中以元音字符开头或以'ok'字符串结尾的所有数据 todo ",
+  "wordCount" : "1279",
   "inLanguage": "en",
   "datePublished": "2023-03-01T14:06:30+08:00",
   "dateModified": "2023-03-01T14:06:30+08:00",
@@ -238,7 +238,7 @@ var _hmt = _hmt || [];
     
     <span id="post_meta_style_3">
         <span class="fa fa-file-word-o"></span>
-        <span>1278字
+        <span>1279字
             &nbsp;&nbsp;
         </span>
     </span>
@@ -340,12 +340,12 @@ var _hmt = _hmt || [];
                     <li>
                         <a href="#%e9%80%9a%e9%85%8d%e7%ac%a6%e6%a8%a1%e7%b3%8a%e5%8c%b9%e9%85%8d" aria-label="通配符(模糊匹配)">通配符(模糊匹配)</a></li>
                     <li>
-                        <a href="#%e6%ad%a3%e5%88%99%e8%a1%a8%e8%be%be%e5%bc%8f" aria-label="正则表达式">正则表达式</a>
+                        <a href="#%e6%ad%a3%e5%88%99%e8%a1%a8%e8%be%be%e5%bc%8f" aria-label="正则表达式">正则表达式</a></li></ul>
+                    </li></ul>
                     </li>
-                </ul>
-                </li>
-                </ul>
-                </li>
+                    <li>
+                        <a href="#todo" aria-label="todo">todo</a>
+                    </li>
                 </ul>
             </div>
         </details>
@@ -578,7 +578,8 @@ var _hmt = _hmt || [];
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-mysql" data-lang="mysql"><span style="display:flex;"><span><span style="color:#75715e"># 示例
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">SELECT</span> name <span style="color:#66d9ef">FROM</span> person_tbl <span style="color:#66d9ef">WHERE</span> name <span style="color:#66d9ef">REGEXP</span> <span style="color:#e6db74">&#39;^[aeiou]|ok$&#39;</span>;
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># 查找name字段中以元音字符开头或以&#39;ok&#39;字符串结尾的所有数据
-</span></span></span></code></pre></div>
+</span></span></span></code></pre></div><h2 id="todo">todo<a hidden class="anchor" aria-hidden="true" href="#todo">#</a></h2>
+
 
         </div>
         <div class="post-reward">
@@ -615,7 +616,7 @@ var _hmt = _hmt || [];
   <a class="prev" href="https://lysandert.github.io/posts/blog/iterm2/">
     <span class="title">« 上一页</span>
     <br>
-    <span>Iterm2 常用快捷键</span>
+    <span>iTerm2 常用快捷键</span>
   </a>
   <a class="next" href="https://lysandert.github.io/posts/blog/mycli/">
     <span class="title">下一页 »</span>
