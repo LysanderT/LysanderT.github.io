@@ -6,7 +6,16 @@
     <description>Recent content in 👨🏻‍💻 技术 on Lysander&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 01 Mar 2023 14:35:30 +0800</lastBuildDate><atom:link href="https://lysandert.github.io/posts/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 12 Apr 2023 17:30:43 +0800</lastBuildDate><atom:link href="https://lysandert.github.io/posts/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>计算机硬件结构</title>
+      <link>https://lysandert.github.io/posts/blog/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/</link>
+      <pubDate>Wed, 12 Apr 2023 17:30:43 +0800</pubDate>
+      
+      <guid>https://lysandert.github.io/posts/blog/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/</guid>
+      <description>硬件结构 冯诺伊曼模型 运算器ALU 控制器Control Unit 存储器Memory Unit 输入输出设备 I/O devices 内存 线性存储，基本单位字节(Byte)，每一个字节对应一个内存地址（从0开始编号，最后一个地址是内存总字节数-1）。 1 Byte = 8 bit CPU 控制单元Control Unit 逻辑运算单元ALU 寄存器Accumul</description>
+    </item>
+    
     <item>
       <title>iTerm2 常用快捷键</title>
       <link>https://lysandert.github.io/posts/blog/iterm2/</link>
@@ -104,15 +113,6 @@
       
       <guid>https://lysandert.github.io/posts/blog/ubuntu_bug/</guid>
       <description>1. apt/apt-get update失败 1.1 尝试换源 命令行里输入 nano /etc/apt/sources.list 在打开的编辑器里将原有的源注释。 打开firefox搜索中科大/阿里/清华源（记得一定要与ubuntu的版本对应），复制并粘贴到编辑器中。 例如：清华源for ubuntu 20.04 LTS # 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释 deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal main restricted universe multiverse #</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://lysandert.github.io/posts/blog/environment/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://lysandert.github.io/posts/blog/environment/</guid>
-      <description></description>
     </item>
     
   </channel>

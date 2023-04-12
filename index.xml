@@ -6,7 +6,16 @@
     <description>Recent content on Lysander&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 01 Mar 2023 14:35:30 +0800</lastBuildDate><atom:link href="https://lysandert.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 12 Apr 2023 17:30:43 +0800</lastBuildDate><atom:link href="https://lysandert.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>计算机硬件结构</title>
+      <link>https://lysandert.github.io/posts/blog/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/</link>
+      <pubDate>Wed, 12 Apr 2023 17:30:43 +0800</pubDate>
+      
+      <guid>https://lysandert.github.io/posts/blog/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/</guid>
+      <description>硬件结构 冯诺伊曼模型 运算器ALU 控制器Control Unit 存储器Memory Unit 输入输出设备 I/O devices 内存 线性存储，基本单位字节(Byte)，每一个字节对应一个内存地址（从0开始编号，最后一个地址是内存总字节数-1）。 1 Byte = 8 bit CPU 控制单元Control Unit 逻辑运算单元ALU 寄存器Accumul</description>
+    </item>
+    
     <item>
       <title>iTerm2 常用快捷键</title>
       <link>https://lysandert.github.io/posts/blog/iterm2/</link>
@@ -148,7 +157,7 @@
       <pubDate>Sat, 06 Nov 2021 15:15:53 +0800</pubDate>
       
       <guid>https://lysandert.github.io/links/</guid>
-      <description>Lysander&amp;#39;s Blog 一个记录技术、阅读、生活的博客 👉友链格式 名称： Lysander&amp;rsquo;s Blog 网址： https://lysandert.github.io 图标： https://lysandert.github.io/img/cai.gif 描述： 一个记录技术、阅读、生活的博客 👉友链申请要求 秉承互换友链原则、文章定期更新、不能有太多广告、个人描述字数控制在15字内 👉Hugo博客交流群 ????????</description>
+      <description>Lysander&amp;#39;s Blog 一个记录技术、阅读、生活的博客 👉友链格式 名称： Lysander&amp;rsquo;s Blog 网址： https://lysandert.github.io 图标： https://lysandert.github.io/img/cai.gif 描述： 一个记录技术、阅读、生活的博客 👉友链申请要求 秉承互换友链原则、文章定期更新、不能有太多广告、个人描述字数控制在15字内</description>
     </item>
     
     <item>
@@ -158,15 +167,6 @@
       
       <guid>https://lysandert.github.io/about/</guid>
       <description>🐼 About me 😎 Name: Lysander Cheng 🎓 Educational experience Sophomore(2021.9-2025.8): Computer Science and Engineering, Chinese University of Hong Kong, Shenzhen. Github: https://github.com/LysanderT 🌱 Research interest: SLAM, AIGC &amp;amp; Emergence 🦾 I&amp;rsquo;m learning SLAM, computer network &amp;amp; OS 👍 I’m looking for a summer internship(research or work)</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://lysandert.github.io/posts/blog/environment/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://lysandert.github.io/posts/blog/environment/</guid>
-      <description></description>
     </item>
     
     

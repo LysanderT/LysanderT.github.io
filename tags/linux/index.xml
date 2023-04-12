@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Linux on Lysander&#39;s Blog</title>
+    <link>https://lysandert.github.io/tags/linux/</link>
+    <description>Recent content in Linux on Lysander&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 12 Apr 2023 17:30:43 +0800</lastBuildDate><atom:link href="https://lysandert.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>计算机硬件结构</title>
+      <link>https://lysandert.github.io/posts/blog/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/</link>
+      <pubDate>Wed, 12 Apr 2023 17:30:43 +0800</pubDate>
+      
+      <guid>https://lysandert.github.io/posts/blog/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/</guid>
+      <description>硬件结构 冯诺伊曼模型 运算器ALU 控制器Control Unit 存储器Memory Unit 输入输出设备 I/O devices 内存 线性存储，基本单位字节(Byte)，每一个字节对应一个内存地址（从0开始编号，最后一个地址是内存总字节数-1）。 1 Byte = 8 bit CPU 控制单元Control Unit 逻辑运算单元ALU 寄存器Accumul</description>
+    </item>
+    
+  </channel>
+</rss>
