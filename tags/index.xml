@@ -6,25 +6,7 @@
     <description>Recent content in 🧩 标签 on Lysander&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 12 Apr 2023 17:30:43 +0800</lastBuildDate><atom:link href="https://lysandert.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Linux</title>
-      <link>https://lysandert.github.io/tags/linux/</link>
-      <pubDate>Wed, 12 Apr 2023 17:30:43 +0800</pubDate>
-      
-      <guid>https://lysandert.github.io/tags/linux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>System</title>
-      <link>https://lysandert.github.io/tags/system/</link>
-      <pubDate>Wed, 12 Apr 2023 17:30:43 +0800</pubDate>
-      
-      <guid>https://lysandert.github.io/tags/system/</guid>
-      <description></description>
-    </item>
-    
+    <lastBuildDate>Wed, 01 Mar 2023 14:35:30 +0800</lastBuildDate><atom:link href="https://lysandert.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>iTerm2</title>
       <link>https://lysandert.github.io/tags/iterm2/</link>
@@ -121,6 +103,15 @@
       <pubDate>Tue, 21 Feb 2023 16:44:43 +0800</pubDate>
       
       <guid>https://lysandert.github.io/tags/ubuntu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>system</title>
+      <link>https://lysandert.github.io/tags/system/</link>
+      <pubDate>Thu, 12 Jan 2023 17:30:43 +0800</pubDate>
+      
+      <guid>https://lysandert.github.io/tags/system/</guid>
       <description></description>
     </item>
     

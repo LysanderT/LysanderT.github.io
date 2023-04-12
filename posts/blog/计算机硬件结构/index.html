@@ -50,7 +50,7 @@ var _hmt = _hmt || [];
 <meta property="og:description" content="硬件结构 冯诺伊曼模型 运算器ALU 控制器Control Unit 存储器Memory Unit 输入输出设备 I/O devices 内存 线性存储，基本单位字节(Byte)，每一个字节对应一个内存地址（从0开始编号，最后一个地址是内存总字节数-1）。 1 Byte = 8 bit CPU 控制单元Control Unit 逻辑运算单元ALU 寄存器Accumul" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://lysandert.github.io/posts/blog/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2023-04-12T17:30:43+08:00" />
+<meta property="article:published_time" content="2023-01-12T17:30:43+08:00" />
 <meta property="article:modified_time" content="2023-04-12T17:30:43+08:00" />
 
 <meta name="twitter:card" content="summary"/>
@@ -99,7 +99,7 @@ var _hmt = _hmt || [];
   "articleBody": "硬件结构 冯诺伊曼模型 运算器ALU 控制器Control Unit 存储器Memory Unit 输入输出设备 I/O devices 内存 线性存储，基本单位字节(Byte)，每一个字节对应一个内存地址（从0开始编号，最后一个地址是内存总字节数-1）。 1 Byte = 8 bit\nCPU 控制单元Control Unit 逻辑运算单元ALU 寄存器Accumulator 32位CPU=32bit=一次可计算4字节\n寄存器 通用寄存器：存放需要计算的数据 程序计数器：存放下一条指令所在的“地址”（指令还在内存中） 指令寄存器：用来存放当前正在执行的指令 总线 用于CPU和内存、其他设备之间的通信，总线可分为三种：\n地址总线，指定CPU将要操作的内存的地址 控制总线，用于发射、接收信号，如终端、复位等信号。 数据总线，用于读取内存的数据 读写内存数据时：一般先地址总线指定地址，再控制总线决定是读或写命令，再通过数据总线来传输数据。\n位宽 线路位宽：地址总线条数\n32位宽的地址总线和数据总线最好对应32位cpu。32位最大可操作2^32B（4GB）内存（寻址范围）。\n64位CPU可以一次读入64位数字或进行64位数字运算。而32位则需要进位等操作。\n只有运算大数字时，64位的计算性能才体现出来。\n硬件的位宽一般指CPU的位宽，软件的位宽一般指指令的位宽。\n64位操作系统经过兼容可以运行32位的软件。但32位的软件却难以执行64位的指令，因为32位的寄存器存不下64位指令。\nCPU的指令周期 第一步，CPU 读取「程序计数器」的值，这个值是指令的内存地址，然后 CPU 的「控制单元」操作「地址总线」指定需要访问的内存地址，接着通知内存设备准备数据，数据准备好后通过「数据总线」将指令数据传给 CPU，CPU 收到内存传来的数据后，将这个指令数据存入到「指令寄存器」。 第二步，「程序计数器」的值自增，表示指向下一条指令。这个自增的大小，由 CPU 的位宽决定，比如 32 位的 CPU，指令是 4 个字节，需要 4 个内存地址存放，因此「程序计数器」的值会自增 4； 第三步，CPU 分析「指令寄存器」中的指令，确定指令的类型和参数，如果是计算类型的指令，就把指令交给「逻辑运算单元」运算；如果是存储类型的指令，则交由「控制单元」执行； 简单总结一下就是，一个程序执行的时候，CPU 会根据程序计数器里的内存地址，从内存里面把需要执行的指令读取到指令寄存器里面执行，然后根据指令长度自增，开始顺序读取下一条指令。\nCPU 从程序计数器读取指令、到执行、再到下一条指令，这个过程会不断循环，直到程序执行结束，这个不断循环的过程被称为 CPU 的指令周期。\n存储器层次结构 寄存器：最快。32/64位CPU的寄存器大多可以存储4/8个字节。\nCPU cache: SRAM 静态随机存储器\n内存：DRAM 动态随机存储器\n硬盘：SSD 固体硬盘或者 HDD 机械硬盘\nCPU Cache L1 一般分为数据缓存dCache和指令iCache缓存两个\nL1、L2是每个CPU核心独有，L3是多个CPU共享\nCache line缓存块是CPU从内存读取数据到Cache的单位\n缓存命中率 提高数据缓存命中率：按内存布局顺序访问 提高指令缓存命中率：与CPU分支预测器有关，C/C++提供有显式的分支预测工具likely和unlikely（用其将if中的条件包裹起来就好）。 提高多核缓存命中率：把线程绑定到一个CPU核心上。如Linux的Sched_setaffinity方法 数据读写 写入的方法：写直达和写回（大多情况无需读写内存，更好）\n缓存一致性 Cache Coherence 写传播 事务的串行化（锁的概念） 总线嗅探 写传播的实现方式，不能实现事务串行化，总线带宽压力大（总是发出广播事件）\nMESI协议 Modified 相当于Dirty Exclusive Shared Invalidated 伪共享（读写数据时的问题） 当多个线程（分属多个CPU核心）同时读写同一个Cache Line的不同变量时，会导致CPU Cache失效。\n解决办法：\nLinux 的 __cacheline_aligned 放在变量后面可使对齐 用不会更改的变量（可以是无意义的）去填充 中断 异步的事件处理机智，可以提高系统的并发处理能力。\n中断处理程序，要尽快处理完，减少对正常进程运行调度的影响（其他中断可能会丢失）。\nLinux：中断分为两个阶段（为了解决中断程序执行过长和中断丢失问题）\ntodo ",
   "wordCount" : "1668",
   "inLanguage": "en",
-  "datePublished": "2023-04-12T17:30:43+08:00",
+  "datePublished": "2023-01-12T17:30:43+08:00",
   "dateModified": "2023-04-12T17:30:43+08:00",
   "author":[{
     "@type": "Person",
@@ -225,7 +225,7 @@ var _hmt = _hmt || [];
 <span class="parent-post-meta">
     <span id="post_meta_style_1">
         <span class="fa fa-calendar-check-o"></span>
-        <span>2023-04-12
+        <span>2023-01-12
             &nbsp;&nbsp;
         </span>
     </span>
@@ -258,8 +258,7 @@ var _hmt = _hmt || [];
         <span class="fa fa-tags" style="opacity: 0.8"></span>
         <span>
             <span class="post-tags-meta">
-                <a href="https://lysandert.github.io/tags/linux/" style="color: var(--secondary)!important;">Linux</a>
-                &nbsp;<a href="https://lysandert.github.io/tags/system/" style="color: var(--secondary)!important;">System</a>
+                <a href="https://lysandert.github.io/tags/system/" style="color: var(--secondary)!important;">system</a>
             </span>
         </span>
     </span>
@@ -548,10 +547,15 @@ var _hmt = _hmt || [];
         <footer class="post-footer">
             
 <nav class="paginav">
-  <a class="next" href="https://lysandert.github.io/posts/blog/iterm2/">
+  <a class="prev" href="https://lysandert.github.io/posts/research/research1/">
+    <span class="title">« 上一页</span>
+    <br>
+    <span>Research1</span>
+  </a>
+  <a class="next" href="https://lysandert.github.io/posts/life/life/">
     <span class="title">下一页 »</span>
     <br>
-    <span>iTerm2 常用快捷键</span>
+    <span>Life</span>
   </a>
 </nav>
 
