@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Linux on Lysander&#39;s Blog</title>
+    <link>https://lysandert.github.io/tags/linux/</link>
+    <description>Recent content in Linux on Lysander&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 17 Aug 2022 20:19:18 +0800</lastBuildDate><atom:link href="https://lysandert.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux内存管理</title>
+      <link>https://lysandert.github.io/posts/blog/linux%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/</link>
+      <pubDate>Wed, 17 Aug 2022 20:19:18 +0800</pubDate>
+      
+      <guid>https://lysandert.github.io/posts/blog/linux%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/</guid>
+      <description>内存管理 虚拟内存 操作系统引入了虚拟内存的概念 程序所使用的内存地址叫做虚拟内存地址（Virtual Memory Address） 实际存在硬件里面的空间地址叫物理内存地址（Physical Memory Address）。 内存分段 Segmentation driven: 用户执行的程序（虚拟内存中），在物理内存中找一块地方放（段的大小不固定） 虚拟</description>
+    </item>
+    
+  </channel>
+</rss>

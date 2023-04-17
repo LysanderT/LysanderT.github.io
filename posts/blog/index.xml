@@ -6,7 +6,16 @@
     <description>Recent content in 👨🏻‍💻 技术 on Lysander&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 01 Mar 2023 14:35:30 +0800</lastBuildDate><atom:link href="https://lysandert.github.io/posts/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 17 Apr 2023 20:23:17 +0800</lastBuildDate><atom:link href="https://lysandert.github.io/posts/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>why is better to use &#43;&#43;i instead of i&#43;&#43; in a for loop</title>
+      <link>https://lysandert.github.io/posts/blog/why_use_&#43;&#43;i/</link>
+      <pubDate>Mon, 17 Apr 2023 20:23:17 +0800</pubDate>
+      
+      <guid>https://lysandert.github.io/posts/blog/why_use_&#43;&#43;i/</guid>
+      <description>because ++i use less memory. // prefix T&amp;amp; T::operator++(){ *this += 1; // or sth else return *this; } // postfix T&amp;amp; T::operator++(int){ // need to create a new variable T tmp(*this); // T tmp = *this ++(*this); return tmp; } 但是，编译器会对这种情况进行优化，所以实际上，这两种写法多数情况下在速度上是没有区别的。</description>
+    </item>
+    
     <item>
       <title>iTerm2 常用快捷键</title>
       <link>https://lysandert.github.io/posts/blog/iterm2/</link>
@@ -107,12 +116,39 @@
     </item>
     
     <item>
+      <title>进程与线程</title>
+      <link>https://lysandert.github.io/posts/blog/%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B/</link>
+      <pubDate>Mon, 23 Jan 2023 20:22:16 +0800</pubDate>
+      
+      <guid>https://lysandert.github.io/posts/blog/%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B/</guid>
+      <description>进程与线程 进程 Process 进程的状态 运行状态（Running）：该时刻进程占用 CPU； 就绪状态（Ready）：可运行，由于其他进程处于运行状态而暂时停止运行； 阻塞状态（Blocked）：该进程正在等待某一事件发生（如等待输入/输出操作的完成）而暂时停止运行，这时，即使给它CPU控制权，它也</description>
+    </item>
+    
+    <item>
+      <title>Why use a&#43;=b instead of a = a &#43; b in C&#43;&#43;?</title>
+      <link>https://lysandert.github.io/posts/blog/why_use_a&#43;b/</link>
+      <pubDate>Mon, 23 Jan 2023 20:16:45 +0800</pubDate>
+      
+      <guid>https://lysandert.github.io/posts/blog/why_use_a&#43;b/</guid>
+      <description>a, b are of same type: a += b only needs 1 assignment, it&amp;rsquo;s like [pass by reference] but for a = a + b, the process is as follows: temp = a a = temp + b it&amp;rsquo;s take 2 assignment. when a, b are strings, the problem is especially obvious. a, b are of different types a += b can do implicit typecasting but a = a + b cannot</description>
+    </item>
+    
+    <item>
       <title>计算机硬件结构</title>
       <link>https://lysandert.github.io/posts/blog/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/</link>
       <pubDate>Thu, 12 Jan 2023 17:30:43 +0800</pubDate>
       
       <guid>https://lysandert.github.io/posts/blog/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6%E7%BB%93%E6%9E%84/</guid>
       <description>硬件结构 冯诺伊曼模型 运算器ALU 控制器Control Unit 存储器Memory Unit 输入输出设备 I/O devices 内存 线性存储，基本单位字节(Byte)，每一个字节对应一个内存地址（从0开始编号，最后一个地址是内存总字节数-1）。 1 Byte = 8 bit CPU 控制单元Control Unit 逻辑运算单元ALU 寄存器Accumul</description>
+    </item>
+    
+    <item>
+      <title>Linux内存管理</title>
+      <link>https://lysandert.github.io/posts/blog/linux%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/</link>
+      <pubDate>Wed, 17 Aug 2022 20:19:18 +0800</pubDate>
+      
+      <guid>https://lysandert.github.io/posts/blog/linux%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/</guid>
+      <description>内存管理 虚拟内存 操作系统引入了虚拟内存的概念 程序所使用的内存地址叫做虚拟内存地址（Virtual Memory Address） 实际存在硬件里面的空间地址叫物理内存地址（Physical Memory Address）。 内存分段 Segmentation driven: 用户执行的程序（虚拟内存中），在物理内存中找一块地方放（段的大小不固定） 虚拟</description>
     </item>
     
   </channel>
